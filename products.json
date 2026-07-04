@@ -31,7 +31,7 @@
     "category": "Service",
     "name": "Repair at home",
     "price": "€2",
-    "description": "2 € Fee. If on stock = Can come to your home. Not on Stock = Can not come.",
+    "description": "2 € Fee, If on stock = Can come to your home. Not on Stock = Can not come.",
     "stock": true
   }
 ]
