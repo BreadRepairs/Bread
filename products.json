@@ -59,14 +59,14 @@
     "category": "Product",
     "name": "AMD Ryzen 5 8500G",
     "price": "€149,90",
-    "description": "Processor AM5.",
+    "description": "Processor AM5. Supports up to DDR5 5400MT/s",
     "stock": false
   },
   {
     "category": "Product",
     "name": "ASUS ROG Astral 5090",
     "price": "€4899,40",
-    "description": "World's best Graphics Card.",
+    "description": "World's best Graphics Card. ASUS. Republic of Gamers.",
     "stock": false
   },
   {
