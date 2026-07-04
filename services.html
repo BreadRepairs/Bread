@@ -289,6 +289,8 @@
           }
 
           const data = await response.json();
+                  // Put in-stock items first
+          data.sort((a, b) => Number(b.stock) - Number(a.stock));
 
           // Show an empty-state message when the JSON file is an empty array.
           if (!Array.isArray(data) || data.length === 0) {
