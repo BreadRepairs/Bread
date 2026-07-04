@@ -6,9 +6,6 @@
     "description": "Complete virus and malware removal.",
     "stock": true
   }
-]
-
-[
   {
     "category": "Product",
     "name": "32GB CL30 6000MT/s DDR5 2x16GB",
@@ -16,9 +13,6 @@
     "description": "DDR5 Memory.",
     "stock": false
   }
-]
-
-[
   {
     "category": "Service",
     "name": "Computer Repair",
@@ -26,9 +20,6 @@
     "description": "Repair for Computers/Laptops and Consoles.",
     "stock": true
   }
-]
-
-[
   {
     "category": "Service",
     "name": "Playstation 3",
@@ -36,9 +27,6 @@
     "description": "NOT RESET/AVAILABLE ONLY FOR 2 YEARS",
     "stock": true
   }
-]
-
-[
   {
     "category": "Service",
     "name": "Repair at home",
