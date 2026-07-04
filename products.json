@@ -60,14 +60,14 @@
     "name": "AMD Ryzen 5 8500G",
     "price": "€149,90",
     "description": "Processor AM5.",
-    "stock": "false",
+    "stock": false
   },
   {
     "category": "Product",
     "name": "ASUS ROG Astral 5090",
     "price": "€4899,40",
     "description": "World's best Graphics Card.",
-    "stock": "false",
+    "stock": false
   },
   {
     "category": "Product",
