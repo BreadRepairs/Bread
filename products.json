@@ -1,1 +1,49 @@
-[]
+[
+  {
+    "category": "Service",
+    "name": "Virus Removal",
+    "price": "€5",
+    "description": "Complete virus and malware removal.",
+    "stock": true
+  }
+]
+
+[
+  {
+    "category": "Product",
+    "name": "32GB CL30 6000MT/s DDR5 2x16GB",
+    "price": "€665",
+    "description": "DDR5 Memory.",
+    "stock": false
+  }
+]
+
+[
+  {
+    "category": "Service",
+    "name": "Computer Repair",
+    "price": "Depends on what repair and where",
+    "description": "Repair for Computers/Laptops and Consoles.",
+    "stock": true
+  }
+]
+
+[
+  {
+    "category": "Service",
+    "name": "Playstation 3",
+    "price": "€2999",
+    "description": "NOT RESET/AVAILABLE ONLY FOR 2 YEARS",
+    "stock": true
+  }
+]
+
+[
+  {
+    "category": "Service",
+    "name": "Repair at home",
+    "price": "€2",
+    "description": "2 € Fee. If on stock = Can come to your home. Not on Stock = Can not come.",
+    "stock": true
+  }
+]
