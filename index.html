@@ -9,6 +9,10 @@
 
 <style>
 
+html{
+scroll-behavior:smooth;
+}
+
 *{
 margin:0;
 padding:0;
@@ -132,6 +136,40 @@ color:#00bfff;
 margin-bottom:15px;
 }
 
+.services-section{
+opacity:0;
+transform:translateY(30px);
+transition:opacity .7s ease, transform .7s ease;
+}
+
+.services-section.visible{
+opacity:1;
+transform:translateY(0);
+}
+
+.services-cta-wrap{
+margin-top:35px;
+display:flex;
+justify-content:center;
+}
+
+.services-cta{
+display:inline-block;
+padding:18px 42px;
+background:#00bfff;
+color:white;
+text-decoration:none;
+border-radius:40px;
+transition:.3s;
+font-weight:700;
+box-shadow:0 0 20px #00bfff44;
+}
+
+.services-cta:hover{
+transform:scale(1.05);
+box-shadow:0 0 24px #00bfff;
+}
+
 .contact-box{
 max-width:700px;
 margin:auto;
@@ -197,13 +235,14 @@ font-size:18px;
 <div class="logo">BREAD</div>
 
 <div>
+<a href="#hero">Home</a>
 <a href="#services">Services</a>
 <a href="#contact">Contact</a>
 </div>
 
 </nav>
 
-<section class="hero">
+<section class="hero" id="hero">
 
 <div>
 
@@ -221,7 +260,7 @@ performance upgrades, and more.
 
 </section>
 
-<section id="services">
+<section id="services" class="services-section">
 
 <h1 class="title">Services</h1>
 
@@ -247,6 +286,10 @@ performance upgrades, and more.
 <p>We come to your house if you live in <strong>Pohjanmaa, Finland.</strong></p>
 </div>
 
+</div>
+
+<div class="services-cta-wrap">
+<a class="services-cta" href="services.html">📦 View Full Products & Services</a>
 </div>
 
 </section>
@@ -287,9 +330,26 @@ Always remember, you can contact us anytime by email or phone.
 
 <footer>
 
-© 2026 BreadRepairs
+© 2026 Bread Repairs
 
 </footer>
+
+<script>
+const servicesSection = document.querySelector('.services-section');
+
+if (servicesSection) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        servicesSection.classList.add('visible');
+        observer.unobserve(servicesSection);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  observer.observe(servicesSection);
+}
+</script>
 
 </body>
 </html>
