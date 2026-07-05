@@ -1,0 +1,98 @@
+[
+  {
+    "category": "Service",
+    "name": "Virus Removal",
+    "price": "€5",
+    "description": "Complete virus and malware removal.",
+    "stock": true,
+    "badge": "Best Value"
+  },
+  {
+    "category": "Product",
+    "name": "32GB CL30 6000MT/s DDR5 2x16GB",
+    "price": "€665",
+    "description": "DDR5 Memory.",
+    "stock": false,
+    "badge": "NEW"
+  },
+  {
+    "category": "Service",
+    "name": "Computer Repair",
+    "price": "Depends on what repair and where",
+    "description": "Repair for Computers/Laptops and Consoles.",
+    "stock": true,
+    "badge": "Best Value"
+  },
+  {
+    "category": "Product",
+    "name": "Playstation 3",
+    "price": "€2999",
+    "description": "NOT RESET/AVAILABLE ONLY FOR 2 YEARS",
+    "stock": true,
+    "badge": "no"
+  },
+  {
+    "category": "Service",
+    "name": "Repair at home",
+    "price": "€2",
+    "description": "2 € Fee, If on stock = Can come to your home. Not on Stock = Can not come.",
+    "stock": true,
+    "badge": "New"
+  },
+  {
+    "category": "Service",
+    "name": "GPU Install",
+    "price": "€3",
+    "description": "Hard to lift up.",
+    "stock": true,
+    "badge": "Best Value"
+  },
+  {
+    "category": "Product",
+    "name": "Power Cable 1m",
+    "price": "€3",
+    "description": "Cable for normal computers. IEC C13 Connector.",
+    "stock": true,
+    "badge": "New"
+  },
+  {
+    "category": "Product",
+    "name": "Disco Ball",
+    "price": "€5",
+    "description": "RGB Disco lamp.",
+    "stock": true,
+    "badge": "New"
+  },
+  {
+    "category": "Product",
+    "name": "AMD Ryzen 5 8500G",
+    "price": "€149,90",
+    "description": "Processor AM5. Supports up to DDR5 5400MT/s",
+    "stock": false,
+    "badge": "Best Value"
+  },
+  {
+    "category": "Product",
+    "name": "ASUS ROG Astral 5090",
+    "price": "€4899,40",
+    "description": "World's best Graphics Card. ASUS. Republic of Gamers.",
+    "stock": false,
+    "badge": "Best Value"
+  },
+  {
+    "category": "Product",
+    "name": "Xinqin cable 1m",
+    "price": "€1",
+    "description": "Useless Cable",
+    "stock": true,
+    "badge": "no"
+  },
+  {
+    "category": "Service",
+    "name": "TV/Monitor Cleaning",
+    "price": "€3",
+    "description": "About 5 minutes to clean all fingerprints and dust. TV's and Monitor's.",
+    "stock": true,
+    "badge": "Best Value"
+  }
+]
