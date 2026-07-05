@@ -75,5 +75,12 @@
     "price": "€1",
     "description": "Useless Cable",
     "stock": true
+  },
+  {
+    "category": "Service",
+    "name": "TV/Monitor Cleaning",
+    "price": "€3",
+    "description": "About 5 minutes to clean all fingerprints and dust. TV's and Monitor's.",
+    "stock": true
   }
 ]
