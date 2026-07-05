@@ -5,6 +5,7 @@
     "price": "€5",
     "description": "Complete virus and malware removal.",
     "stock": true
+    "badge": "Best Value"
   },
   {
     "category": "Product",
@@ -12,6 +13,7 @@
     "price": "€665",
     "description": "DDR5 Memory.",
     "stock": false
+    "badge": "NEW"
   },
   {
     "category": "Service",
@@ -19,6 +21,7 @@
     "price": "Depends on what repair and where",
     "description": "Repair for Computers/Laptops and Consoles.",
     "stock": true
+    "badge": "Best Value"
   },
   {
     "category": "Product",
@@ -26,6 +29,7 @@
     "price": "€2999",
     "description": "NOT RESET/AVAILABLE ONLY FOR 2 YEARS",
     "stock": true
+    "badge": "no"
   },
   {
     "category": "Service",
@@ -33,6 +37,7 @@
     "price": "€2",
     "description": "2 € Fee, If on stock = Can come to your home. Not on Stock = Can not come.",
     "stock": true
+    "badge": "NEW"
   },
   {
     "category": "Service",
@@ -40,6 +45,7 @@
     "price": "€3",
     "description": "Hard to lift up.",
     "stock": true
+    "badge": "Best Value"
   },
   {
     "category": "Product",
@@ -47,6 +53,7 @@
     "price": "€3",
     "description": "Cable for normal computers. IEC C13 Connector.",
     "stock": true
+    "badge": "NEW"
   },
   {
     "category": "Product",
@@ -54,6 +61,7 @@
     "price": "€5",
     "description": "RGB Disco lamp.",
     "stock": true
+    "badge": "NEW"
   },
   {
     "category": "Product",
@@ -61,6 +69,7 @@
     "price": "€149,90",
     "description": "Processor AM5. Supports up to DDR5 5400MT/s",
     "stock": false
+    "badge": "Best Value"
   },
   {
     "category": "Product",
@@ -68,6 +77,7 @@
     "price": "€4899,40",
     "description": "World's best Graphics Card. ASUS. Republic of Gamers.",
     "stock": false
+    "badge": "Best Value"
   },
   {
     "category": "Product",
@@ -75,6 +85,7 @@
     "price": "€1",
     "description": "Useless Cable",
     "stock": true
+    "badge": "no"
   },
   {
     "category": "Service",
@@ -82,5 +93,6 @@
     "price": "€3",
     "description": "About 5 minutes to clean all fingerprints and dust. TV's and Monitor's.",
     "stock": true
+    "badge": "Best Value"
   }
 ]
