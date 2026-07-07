@@ -345,7 +345,8 @@
           <a class="back-btn" href="index.html">← Back to Home</a>
         </div>
         <h1>Services & Products</h1>
-        <p>Reliable repairs, fast upgrades, and premium accessories delivered with expert care. Browse our current offerings below.</p>
+        <p>Reliable repairs, fast upgrades, and premium accessories delivered with expert care. Browse our current offerings below.
+        ⚠️ Known UI Bug: The stock badge may appear slightly out of position on some cards. This will be fixed in a future update.</p>
       </section>
 
       <section id="catalog" class="section-block"></section>
@@ -363,6 +364,11 @@
           }
 
           const data = await response.json();
+
+          // Put in-stock items first
+data.sort((a, b) => {
+  return Number(b.stock) - Number(a.stock);
+});
 
           // Show an empty-state message when the JSON file is an empty array.
           if (!Array.isArray(data) || data.length === 0) {
