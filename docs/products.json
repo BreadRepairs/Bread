@@ -58,7 +58,7 @@
   {
     "category": "Product",
     "name": "Disco Ball",
-    "price": "€5",
+    "price": "€7",
     "description": "RGB Disco lamp.",
     "stock": true,
     "badge": "New"
@@ -94,5 +94,149 @@
     "description": "About 5 minutes to clean all fingerprints and dust. TV's and Monitor's.",
     "stock": true,
     "badge": "Best Value"
+  },
+  {
+    "category": "Service",
+    "name": "Diagnostics",
+    "price": "€3",
+    "description": "Diagnose and check for malware. And 2€ extra to check for upgrades.",
+    "stock": true,
+    "badge": "New"
+  },
+  {
+    "category": "Service",
+    "name": "Operating System Install",
+    "price": "€9",
+    "description": "Install Linux or Windows on your computer.",
+    "stock": true,
+    "badge": "New"
+  },
+  {
+    "category": "Product",
+    "name": "Energy+ CAT6 Ethernet Cable",
+    "price": "€10 ---€5---",
+    "description": "5€ SALE!s",
+    "stock": true,
+    "badge": "Sale"
+  },
+  {
+    "category": "Product",
+    "name": "CAT5 Ethernet Cable 1m",
+    "price": "€2",
+    "description": "No Description",
+    "stock": true,
+    "badge": "no"
+  },
+  {
+    "category": "Product",
+    "name": "Female to Female Ethernet Box",
+    "price": "€3",
+    "description": "No Description",
+    "stock": true,
+    "badge": "no"
+  },
+  {
+    "category": "Product",
+    "name": "Scart Cable",
+    "price": "€1",
+    "description": "Useless",
+    "stock": true,
+    "badge": "no"
+  },
+  {
+    "category": "Product",
+    "name": "Analog Power Cable (TV) 220V-230V 5m",
+    "price": "€7 ---5€---",
+    "description": "TV Power Cable.",
+    "stock": true,
+    "badge": "Sale"
+  },
+  {
+    "category": "Product",
+    "name": "DVI to DP Cable 2m (x2) ",
+    "price": "€5",
+    "description": "Monitor Cable",
+    "stock": true,
+    "badge": "New"
+  },
+  {
+    "category": "Product",
+    "name": "USB-A Wall Charger (x3) ",
+    "price": "€2 EACH",
+    "description": "Wall Charger",
+    "stock": true,
+    "badge": "no"
+  },
+  {
+    "category": "Product",
+    "name": "Micro USB-B",
+    "price": "€3",
+    "description": "Useless",
+    "stock": true,
+    "badge": "no"
+  },
+  {
+    "category": "Product",
+    "name": "Unknown Cable (3pin) ",
+    "price": "€4",
+    "description": "Useless",
+    "stock": true,
+    "badge": "no"
+  },
+  {
+    "category": "Product",
+    "name": "Analog Power Cable (TV) 250V 1m",
+    "price": "€3",
+    "description": "TV Power Cable",
+    "stock": true,
+    "badge": "no"
+  },
+  {
+    "category": "Product",
+    "name": "Analog Power Cable (TV) 250V 900cm",
+    "price": "€2",
+    "description": "TV Power Cable",
+    "stock": true,
+    "badge": "New"
+  },
+  {
+    "category": "Product",
+    "name": "Micro-USB 10cm",
+    "price": "€2",
+    "description": "No Decrption",
+    "stock": true,
+    "badge": "no"
+  },
+  {
+    "category": "Product",
+    "name": "Analog Power Cable (TV) 90cm",
+    "price": "€2",
+    "description": "TV Power Cable",
+    "stock": true,
+    "badge": "no"
+  },
+  {
+    "category": "Product",
+    "name": "Lego 12V Cable",
+    "price": "€30",
+    "description": "Lego Original Cable",
+    "stock": true,
+    "badge": "no"
+  },
+  {
+    "category": "Product",
+    "name": "Sony Playstation Analog Video Audio Connectors (PS1-3) ",
+    "price": "€40",
+    "description": "PlayStation Cable for TV.",
+    "stock": true,
+    "badge": "New"
+  },
+  {
+    "category": "Service",
+    "name": "Console Skin",
+    "price": "€5 IF YOU HAVE",
+    "description": "Console Skinning",
+    "stock": true,
+    "badge": "New"
   }
 ]
