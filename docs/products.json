@@ -83,7 +83,7 @@
     "category": "Product",
     "name": "Xinqin cable 1m",
     "price": "€1",
-    "description": "Useless Cable",
+    "description": "Xinqin Cable",
     "stock": true,
     "badge": "no"
   },
@@ -171,7 +171,7 @@
     "category": "Product",
     "name": "Micro USB-B",
     "price": "€3",
-    "description": "Useless",
+    "description": "Unknown Usage",
     "stock": true,
     "badge": "no"
   },
