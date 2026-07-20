@@ -34,11 +34,11 @@
   },
   {
     "category": "Product",
-    "name": "Playstation 3",
-    "price": "€2999",
-    "description": "NOT RESET/AVAILABLE ONLY FOR 2 YEARS",
+    "name": "Logitech K820e Keyboard",
+    "price": "€10",
+    "description": "Tested. Works = YES",
     "stock": true,
-    "badge": "no"
+    "badge": "new"
   },
   {
     "category": "Service",
@@ -83,7 +83,7 @@
   {
     "category": "Product",
     "name": "ASUS ROG Astral 5090",
-    "price": "€4899,40 ---4999,90---",
+    "price": "€4999,40",
     "description": "World's best Graphics Card. ASUS. Republic of Gamers.",
     "stock": false,
     "badge": "Sale"
@@ -118,15 +118,15 @@
     "price": "€9",
     "description": "Install Linux or Windows on your computer.",
     "stock": true,
-    "badge": "New"
+    "badge": ""
   },
   {
     "category": "Product",
     "name": "Energy+ CAT6 Ethernet Cable",
-    "price": "€10 ---€5---",
-    "description": "5€ SALE!s",
+    "price": "€10",
+    "description": "Ethernet Cable 10m. Selling for original price.",
     "stock": true,
-    "badge": "Sale"
+    "badge": ""
   },
   {
     "category": "Product",
@@ -166,7 +166,7 @@
     "price": "€5",
     "description": "Monitor Cable",
     "stock": true,
-    "badge": "New"
+    "badge": ""
   },
   {
     "category": "Product",
@@ -206,7 +206,7 @@
     "price": "€2",
     "description": "TV Power Cable",
     "stock": true,
-    "badge": "New"
+    "badge": ""
   },
   {
     "category": "Product",
@@ -238,7 +238,7 @@
     "price": "€40",
     "description": "PlayStation Cable for TV.",
     "stock": true,
-    "badge": "New"
+    "badge": ""
   },
   {
     "category": "Service",
@@ -246,6 +246,6 @@
     "price": "€5 IF YOU HAVE",
     "description": "Console Skinning",
     "stock": true,
-    "badge": "New"
+    "badge": ""
   }
 ]
