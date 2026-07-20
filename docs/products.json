@@ -7,6 +7,15 @@
     "stock": true,
     "badge": "Best Value"
   },
+{
+    "category": "Service",
+    "name": "Keyboard Cleaning",
+    "price": "€1",
+    "description": "Dust Removal from Keyboards.",
+    "stock": true,
+    "badge": "Best Value"
+  },
+  
   {
     "category": "Product",
     "name": "32GB CL30 6000MT/s DDR5 2x16GB",
