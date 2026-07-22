@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BREAD Computer Repair | News</title>
+    <style>
+      :root {
+        --bg: #060b14;
+        --panel: rgba(10, 18, 32, 0.92);
+        --panel-strong: #101a2d;
+        --text: #f4f7ff;
+        --muted: #94a7c6;
+        --accent: #2ea8ff;
+        --accent-strong: #4ce3ff;
+        --border: rgba(78, 168, 255, 0.35);
+        --success: #39d98a;
+        --shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(46, 168, 255, 0.2), transparent 28%),
+          radial-gradient(circle at bottom right, rgba(76, 227, 255, 0.16), transparent 30%),
+          var(--bg);
+        min-height: 100vh;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(255,255,255,0.03), transparent 45%);
+        pointer-events: none;
+      }
+
+      .page-shell {
+        width: min(1200px, calc(100% - 2rem));
+        margin: 0 auto;
+        padding: 2rem 0 4rem;
+      }
+
+      .hero {
+        background: linear-gradient(145deg, rgba(16, 26, 45, 0.95), rgba(8, 15, 27, 0.95));
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow);
+        border-radius: 28px;
+        padding: 2rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: auto auto -60px -60px;
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(46, 168, 255, 0.25), transparent 70%);
+        filter: blur(20px);
+      }
+
+      .hero-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.2rem;
+      }
+
+      .brand {
+        font-size: 1.2rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent-strong);
+      }
+
+      .hero-nav {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        flex-wrap: wrap;
+      }
+
+      .hero-nav a,
+      .back-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        text-decoration: none;
+        color: var(--text);
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.14);
+        padding: 0.7rem 1rem;
+        border-radius: 999px;
+        transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+      }
+
+      .hero-nav a:hover,
+      .back-btn:hover {
+        transform: translateY(-2px);
+        background: rgba(46, 168, 255, 0.16);
+        border-color: var(--accent);
+      }
+
+      .hero h1 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        margin: 0 0 0.6rem;
+      }
+
+      .hero p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.7;
+        max-width: 750px;
+      }
+
+      .content-block {
+        margin-top: 2rem;
+      }
+
+      .section-title {
+        display: inline-block;
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        position: relative;
+      }
+
+      .section-title::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, var(--accent), transparent);
+        margin-top: 0.35rem;
+      }
+
+      .featured-card {
+        background: linear-gradient(145deg, rgba(16, 26, 45, 0.95), rgba(9, 16, 29, 0.95));
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        min-height: 280px;
+      }
+
+      .featured-visual {
+        min-height: 220px;
+        background: linear-gradient(135deg, rgba(46, 168, 255, 0.32), rgba(76, 227, 255, 0.18));
+        position: relative;
+      }
+
+      .featured-visual::before {
+        content: "✨";
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+      }
+
+      .featured-body {
+        padding: 1.4rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+
+      .news-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.2rem;
+        margin-top: 1.4rem;
+      }
+
+      .news-card {
+        background: linear-gradient(145deg, rgba(16, 26, 45, 0.95), rgba(9, 16, 29, 0.95));
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+      }
+
+      .news-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--accent-strong);
+        box-shadow: 0 22px 55px rgba(46, 168, 255, 0.18);
+      }
+
+      .news-image {
+        min-height: 140px;
+        background: linear-gradient(135deg, rgba(46, 168, 255, 0.22), rgba(255, 255, 255, 0.04));
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+      }
+
+      .news-body {
+        padding: 1rem 1rem 1.1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+        flex: 1;
+      }
+
+      .card-date {
+        color: var(--accent-strong);
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+
+      .article-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        color: var(--accent-strong);
+        text-decoration: none;
+        font-size: 0.92rem;
+        font-weight: 600;
+      }
+
+      .article-link.muted {
+        color: var(--muted);
+      }
+
+      .article-link:hover {
+        color: var(--text);
+      }
+
+      .news-card h3 {
+        margin: 0;
+        font-size: 1.05rem;
+      }
+
+      .news-card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .read-more-btn {
+        margin-top: auto;
+        align-self: flex-start;
+        border: none;
+        background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+        color: var(--bg);
+        padding: 0.7rem 1rem;
+        border-radius: 999px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .read-more-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 24px rgba(46, 168, 255, 0.25);
+      }
+
+      .news-full {
+        display: none;
+        margin-top: 0.2rem;
+        color: var(--text);
+        line-height: 1.7;
+        padding: 0.8rem 0 0;
+        border-top: 1px solid rgba(255,255,255,0.08);
+      }
+
+      .news-card.is-open .news-full {
+        display: block;
+      }
+
+      @media (max-width: 860px) {
+        .featured-card {
+          grid-template-columns: 1fr;
+        }
+
+        .news-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .hero {
+          padding: 1.3rem;
+        }
+
+        .hero-top {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero">
+        <div class="hero-top">
+          <div class="brand">BREAD Computer Repair</div>
+          <div class="hero-nav">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="news.html">News</a>
+          </div>
+        </div>
+        <h1>Latest News</h1>
+        <p>Stay up to date with new services, repairs, and project updates from BREAD Repairs.</p>
+      </section>
+
+      <section class="content-block">
+        <h2 class="section-title">Featured Update</h2>
+        <div id="featured-news"></div>
+      </section>
+
+      <section class="content-block">
+        <h2 class="section-title">Recent Articles</h2>
+        <div id="news-list" class="news-grid"></div>
+      </section>
+    </main>
+
+    <script>
+      let articles = [];
+      const featuredTarget = document.getElementById('featured-news');
+      const newsList = document.getElementById('news-list');
+
+      async function loadNews() {
+        try {
+          const response = await fetch('news.json');
+          if (!response.ok) {
+            throw new Error('Unable to load news data.');
+          }
+
+          const data = await response.json();
+          articles = Array.isArray(data) ? data : [];
+          renderNews();
+        } catch (error) {
+          articles = [];
+          renderNews();
+        }
+      }
+
+      function renderNews() {
+        const featured = articles.find((article) => article.featured) || articles[0];
+
+        if (!featured) {
+          featuredTarget.innerHTML = '<div class="empty-state"><strong>No news available yet.</strong> Add entries to news.json to get started.</div>';
+          newsList.innerHTML = '';
+          return;
+        }
+
+        const featuredLink = getLinkMarkup(featured);
+        featuredTarget.innerHTML = `
+          <article class="featured-card">
+            <div class="featured-visual"></div>
+            <div class="featured-body">
+              <div class="card-date">📅 ${escapeHtml(featured.date || 'Upcoming')}</div>
+              <h3>${escapeHtml(featured.name || featured.title || 'Untitled Article')}</h3>
+              <p>${escapeHtml(featured.description || 'No description provided.')}</p>
+              ${featuredLink}
+              <button class="read-more-btn" data-link="${escapeHtml(featured.link || '')}">Read More</button>
+              <div class="news-full">${escapeHtml(featured.fullText || featured.description || '')}</div>
+            </div>
+          </article>
+        `;
+
+        const regularArticles = articles.filter((article) => !article.featured);
+        newsList.innerHTML = regularArticles.map((article) => {
+          const linkMarkup = getLinkMarkup(article);
+          return `
+            <article class="news-card" data-id="${escapeHtml(article.id || '')}">
+              <div class="news-image"></div>
+              <div class="news-body">
+                <div class="card-date">📅 ${escapeHtml(article.date || 'Upcoming')}</div>
+                <h3>${escapeHtml(article.name || article.title || 'Untitled Article')}</h3>
+                <p>${escapeHtml(article.description || 'No description provided.')}</p>
+                ${linkMarkup}
+                <button class="read-more-btn" data-link="${escapeHtml(article.link || '')}">Read More</button>
+                <div class="news-full">${escapeHtml(article.fullText || article.description || '')}</div>
+              </div>
+            </article>
+          `;
+        }).join('');
+      }
+
+      function getLinkMarkup(article) {
+        const link = article.link && String(article.link).trim();
+        if (!link) {
+          return '<span class="article-link muted">No links</span>';
+        }
+
+        return `<a class="article-link" href="${escapeHtml(link)}" target="_blank" rel="noreferrer">Open link</a>`;
+      }
+
+      function escapeHtml(value) {
+        return String(value)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;');
+      }
+
+      document.addEventListener('click', (event) => {
+        const button = event.target.closest('.read-more-btn');
+        if (!button) return;
+
+        const link = button.dataset.link;
+        if (link) {
+          window.open(link, '_blank', 'noopener,noreferrer');
+          return;
+        }
+
+        const card = button.closest('.featured-card, .news-card');
+        if (!card) return;
+
+        card.classList.toggle('is-open');
+        const label = button.textContent;
+        button.textContent = label === 'Read More' ? 'Show Less' : 'Read More';
+      });
+
+      loadNews();
+    </script>
+  </body>
+</html>
