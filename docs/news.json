@@ -3,7 +3,7 @@
     "id": 1,
     "featured": true,
     "name": "Welcome to the new BREAD Repairs website!",
-    "date": "July 2026",
+    "date": "July 1 2026",
     "description": "We have refreshed our online presence with a cleaner layout, easier browsing, and a new place to follow our latest updates.",
     "fullText": "The new BREAD Repairs website is now live with a simpler experience for customers. You can explore our services, browse products, and keep an eye on the latest news all in one place.",
     "link": ""
@@ -11,9 +11,17 @@
   {
     "id": 2,
     "name": "BREAD Connect BETA is currently under development",
-    "date": "July 2026",
+    "date": "July 22 2026",
     "description": "We are building an early version of our connected support experience for quicker updates and service planning.",
     "fullText": "BREAD Connect is a future-facing project designed to make service booking, updates, and follow-ups simpler and more transparent for our customers.",
     "link": ""
+  },
+  {
+    "id": 3,
+    "name": "BREAD has planned the release of BREAD Connect BETA,
+    "date": "July 22 2026",
+    "description": "We're excited to announce that BREAD Connect BETA is planned to launch later this year!",
+    "fullText": "BREAD Connect BETA is a new application that will help customers quickly access BREAD Repairs information and services. The first beta version is expected to include contact information, quick access to our services page, our shop location, an FAQ section, and links to our website. More features will be added in future updates. Thank you for supporting BREAD Repairs, and stay tuned for more news!",
+    "link": "https://breadrepairs.github.io/Bread"
   }
 ]
