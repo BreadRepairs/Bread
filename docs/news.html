@@ -349,7 +349,7 @@
               <h3>${escapeHtml(featured.name || featured.title || 'Untitled Article')}</h3>
               <p>${escapeHtml(featured.description || 'No description provided.')}</p>
               ${featuredLink}
-              <button class="read-more-btn" data-link="${escapeHtml(featured.link || '')}">Read More</button>
+              <button class="read-more-btn">Read More</button>
               <div class="news-full">${escapeHtml(featured.fullText || featured.description || '')}</div>
             </div>
           </article>
@@ -365,7 +365,7 @@
                 <h3>${escapeHtml(article.name || article.title || 'Untitled Article')}</h3>
                 <p>${escapeHtml(article.description || 'No description provided.')}</p>
                 ${linkMarkup}
-                <button class="read-more-btn" data-link="${escapeHtml(article.link || '')}">Read More</button>
+                <button class="read-more-btn">Read More</button>
                 <div class="news-full">${escapeHtml(article.fullText || article.description || '')}</div>
               </div>
             </article>
@@ -394,12 +394,6 @@
       document.addEventListener('click', (event) => {
         const button = event.target.closest('.read-more-btn');
         if (!button) return;
-
-        const link = button.dataset.link;
-        if (link) {
-          window.open(link, '_blank', 'noopener,noreferrer');
-          return;
-        }
 
         const card = button.closest('.featured-card, .news-card');
         if (!card) return;
