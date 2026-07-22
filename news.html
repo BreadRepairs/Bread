@@ -154,25 +154,7 @@
         border-radius: 24px;
         overflow: hidden;
         box-shadow: var(--shadow);
-        display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
         min-height: 280px;
-      }
-
-      .featured-visual {
-        min-height: 220px;
-        background: linear-gradient(135deg, rgba(46, 168, 255, 0.32), rgba(76, 227, 255, 0.18));
-        position: relative;
-      }
-
-      .featured-visual::before {
-        content: "✨";
-        position: absolute;
-        inset: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 3rem;
       }
 
       .featured-body {
@@ -205,12 +187,6 @@
         transform: translateY(-5px);
         border-color: var(--accent-strong);
         box-shadow: 0 22px 55px rgba(46, 168, 255, 0.18);
-      }
-
-      .news-image {
-        min-height: 140px;
-        background: linear-gradient(135deg, rgba(46, 168, 255, 0.22), rgba(255, 255, 255, 0.04));
-        border-bottom: 1px solid rgba(255,255,255,0.06);
       }
 
       .news-body {
@@ -368,7 +344,6 @@
         const featuredLink = getLinkMarkup(featured);
         featuredTarget.innerHTML = `
           <article class="featured-card">
-            <div class="featured-visual"></div>
             <div class="featured-body">
               <div class="card-date">📅 ${escapeHtml(featured.date || 'Upcoming')}</div>
               <h3>${escapeHtml(featured.name || featured.title || 'Untitled Article')}</h3>
@@ -385,7 +360,6 @@
           const linkMarkup = getLinkMarkup(article);
           return `
             <article class="news-card" data-id="${escapeHtml(article.id || '')}">
-              <div class="news-image"></div>
               <div class="news-body">
                 <div class="card-date">📅 ${escapeHtml(article.date || 'Upcoming')}</div>
                 <h3>${escapeHtml(article.name || article.title || 'Untitled Article')}</h3>
