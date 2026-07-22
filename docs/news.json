@@ -11,7 +11,7 @@
   {
     "id": 2,
     "name": "BREAD Connect BETA is currently under development",
-    "date": "July 22 2026",
+    "date": "July 18 2026",
     "description": "We are building an early version of our connected support experience for quicker updates and service planning.",
     "fullText": "BREAD Connect is a future-facing project designed to make service booking, updates, and follow-ups simpler and more transparent for our customers.",
     "link": ""
@@ -19,9 +19,17 @@
   {
     "id": 3,
     "name": "BREAD has planned the release of BREAD Connect BETA",
-    "date": "July 22 2026",
+    "date": "July 20 2026",
     "description": "We're excited to announce that BREAD Connect BETA is planned to launch later this year!",
     "fullText": "BREAD Connect BETA is a new application that will help customers quickly access BREAD Repairs information and services. The first beta version is expected to include contact information, quick access to our services page, our shop location, an FAQ section, and links to our website. More features will be added in future updates. Thank you for supporting BREAD Repairs, and stay tuned for more news!",
     "link": "https://breadrepairs.github.io/Bread"
+  },
+  {
+    "id": 4,
+    "name": "BREAD Office development is underway",
+    "date": "July 22 2026",
+    "description": "Press Read More",
+    "fullText": "We're currently developing BREAD Office, a new internal system that will help us manage repairs, customers, and work orders more efficiently. This system will also prepare the way for future customer features, including BREAD Connect. Development is ongoing, and we'll share more updates as progress continues.",
+    "link": ""
   }
 ]
