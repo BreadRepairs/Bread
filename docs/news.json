@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "featured": true,
     "name": "Welcome to the new BREAD Repairs website!",
     "date": "July 1 2026",
     "description": "We have refreshed our online presence with a cleaner layout, easier browsing, and a new place to follow our latest updates.",
@@ -33,7 +34,6 @@
   },
   {
     "id": 5,
-    "featured": true,
     "name": "The NWS near houston has issued a tropical storm warning probably for Nuevo",
     "date": "July 23 2026",
     "description": "The National Weather Service and the Storm Prediction Center has issued a tropical storm warning for its path.",
