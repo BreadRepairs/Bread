@@ -31,5 +31,14 @@
     "description": "Press Read More",
     "fullText": "We're currently developing BREAD Office, a new internal system that will help us manage repairs, customers, and work orders more efficiently. This system will also prepare the way for future customer features, including BREAD Connect. Development is ongoing, and we'll share more updates as progress continues.",
     "link": ""
+  },
+  {
+    "id": 1,
+    "featured": true,
+    "name": "The NWS near houston has issued a tropical storm warning probably for Nuevo",
+    "date": "July 23 2026",
+    "description": "The National Weather Service and the Storm Prediction Center has issued a tropical storm warning for its path.",
+    "fullText": "More Info: .SYNOPSIS...Tropical Storm Bertha is south of the Louisiana coast near 29.0N 92.2W, or about 95 nm southwest of New Orleans, Louisiana at 5 AM EDT. It is moving west at 11 kt. Maximum sustained winds are 40 kt with gusts to 50 kt, and the minimum central pressure is 1003 mb. Bertha will move to near 29.3N 94.1W this afternoon, then move inland Texas and weaken to a tropical depression near 29.0N 97.0W late tonight, weaken further to a remnant low near 28.5N 100.1W Fri afternoon and dissipate Sat morning. In the wake of Bertha, a high pressure center will become established over the NE Gulf through Fri, then shift to the central Gulf. The high pressure will provide for a light to gentle wind flow across the basin, except for pulsing moderate to fresh winds off the Yucatan Peninsula and near NE Mexico and the Texas coast through the weekend.",
+    "link": "https://www.nhc.noaa.gov"
   }
 ]
