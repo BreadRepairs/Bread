@@ -349,106 +349,105 @@
     </main>
 
     <script>
-      const form = document.getElementById('repair-form');
-      const productSelect = document.getElementById('productService');
-      const statusBox = document.getElementById('formStatus');
+      emailjs.init({ publicKey: “Yc3Zc2GwOjL7IU4g6”, });
 
-      async function loadProducts() {
-        try {
-          const response = await fetch('products.json');
-          if (!response.ok) {
-            throw new Error('Unable to load products.');
-          }
+const form = document.getElementById(‘repair-form’); const productSelect
+= document.getElementById(‘productService’); const statusBox =
+document.getElementById(‘formStatus’);
 
-          const data = await response.json();
-          const entries = Array.isArray(data) ? data : [];
-          const options = [
+async function loadProducts() { try { const response = await
+fetch(‘products.json’); if (!response.ok) throw new Error();
+
+        const data = await response.json();
+        const entries = Array.isArray(data) ? data : [];
+
+        const options = [
             { value: '', label: 'No Product / Custom' },
             { value: 'divider', label: '-------------------', disabled: true }
-          ];
+        ];
 
-          entries.forEach((item) => {
+        entries.forEach(item => {
             const label = item && item.name ? item.name : 'Untitled Item';
             options.push({ value: label, label });
-          });
+        });
 
-          productSelect.innerHTML = options.map((option) => {
+        productSelect.innerHTML = options.map(option => {
             const attrs = option.disabled ? 'disabled' : '';
             return `<option value="${escapeHtml(option.value)}" ${attrs}>${escapeHtml(option.label)}</option>`;
-          }).join('');
-        } catch (error) {
-          productSelect.innerHTML = '<option value="">No Product / Custom</option>';
+        }).join('');
+    } catch {
+        productSelect.innerHTML = '<option value="">No Product / Custom</option>';
+    }
+
+}
+
+function escapeHtml(value){ return String(value) .replace(/&/g,‘&’)
+.replace(/</g,‘<’) .replace(/>/g,‘>’) .replace(/“/g,‘"’)
+.replace(/‘/g,’'’); }
+
+function showStatus(message,isError=false){
+statusBox.textContent=message;
+statusBox.className=status ${isError?'error':'success'}; }
+
+function validateForm(){ const
+name=document.getElementById(‘customerName’).value.trim(); const
+email=document.getElementById(‘email’).value.trim(); const
+deviceType=document.getElementById(‘deviceType’).value; const
+description=document.getElementById(‘description’).value.trim();
+
+    if(!name||!email||!deviceType||!description){
+        showStatus('Please complete the required fields.',true);
+        return false;
+    }
+    return true;
+
+}
+
+form.addEventListener(‘submit’,(event)=>{ event.preventDefault();
+
+    if(!validateForm()) return;
+
+    const data={
+        customerName:document.getElementById('customerName').value.trim(),
+        email:document.getElementById('email').value.trim(),
+        phone:document.getElementById('phone').value.trim(),
+        deviceType:document.getElementById('deviceType').value,
+        productService:document.getElementById('productService').value,
+        preferredDate:document.getElementById('preferredDate').value,
+        description:document.getElementById('description').value.trim()
+    };
+
+    const submitBtn=form.querySelector(".submit-btn");
+    submitBtn.disabled=true;
+    submitBtn.textContent="Sending...";
+
+    emailjs.send(
+        "service_kbaijco",
+        "template_5ycl8kq",
+        {
+            customer_name:data.customerName,
+            email:data.email,
+            phone:data.phone||"Not provided",
+            device_type:data.deviceType,
+            product_service:data.productService||"No Product / Custom",
+            preferred_date:data.preferredDate||"Not provided",
+            description:data.description
         }
-      }
+    ).then(()=>{
+        showStatus("✅ Your repair request has been sent successfully.");
+        form.reset();
+    }).catch((error)=>{
+        console.error(error);
+        showStatus("❌ Failed to send your repair request.",true);
+    }).finally(()=>{
+        submitBtn.disabled=false;
+        submitBtn.textContent="Submit Request";
+    });
 
-      function escapeHtml(value) {
-        return String(value)
-          .replace(/&/g, '&amp;')
-          .replace(/</g, '&lt;')
-          .replace(/>/g, '&gt;')
-          .replace(/"/g, '&quot;')
-          .replace(/'/g, '&#39;');
-      }
+});
 
-      function showStatus(message, isError = false) {
-        statusBox.textContent = message;
-        statusBox.className = `status ${isError ? 'error' : 'success'}`;
-      }
+loadProducts();
 
-      function validateForm() {
-        const name = document.getElementById('customerName').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const deviceType = document.getElementById('deviceType').value;
-        const description = document.getElementById('description').value.trim();
-
-        if (!name || !email || !deviceType || !description) {
-          showStatus('Please complete the required fields: name, email, device type, and description.', true);
-          return false;
-        }
-
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailPattern.test(email)) {
-          showStatus('Please enter a valid email address.', true);
-          return false;
-        }
-
-        return true;
-      }
-
-      form.addEventListener('submit', (event) => {
-        event.preventDefault();
-
-        if (!validateForm()) {
-          return;
-        }
-
-        const data = {
-          customerName: document.getElementById('customerName').value.trim(),
-          email: document.getElementById('email').value.trim(),
-          phone: document.getElementById('phone').value.trim(),
-          deviceType: document.getElementById('deviceType').value,
-          productService: document.getElementById('productService').value,
-          preferredDate: document.getElementById('preferredDate').value,
-          description: document.getElementById('description').value.trim()
-        };
-
-        const subject = encodeURIComponent('BREAD Repair Request');
-        const body = encodeURIComponent(
-          `Customer Name: ${data.customerName}\n` +
-          `Email: ${data.email}\n` +
-          `Phone: ${data.phone || 'Not provided'}\n` +
-          `Device Type: ${data.deviceType}\n` +
-          `Product / Service: ${data.productService || 'No Product / Custom'}\n` +
-          `Preferred Date: ${data.preferredDate || 'Not provided'}\n` +
-          `Description: ${data.description}`
-        );
-
-        const mailtoLink = `mailto:kappe4@outlook.com?subject=${subject}&body=${body}`;
-        window.location.href = mailtoLink;
-        showStatus('Your request is opening in your email client.');
-      });
-
-      loadProducts();
     </script>
   </body>
 </html>
