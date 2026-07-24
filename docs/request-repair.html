@@ -351,7 +351,8 @@
           </div>
         </div>
         <h1>Request a Repair</h1>
-        <p>Tell us about your device and the issue you are experiencing. We will review your request and get back to you as soon as possible.</p>
+        <p>Tell us about your device and the issue you are experiencing. We will review your request and get back to you as soon as possible.
+        ⚠️ UI Bug: Dropdown menus don't fully match the dark theme. Some still use the default white Windows style. Planned fix: convert all dropdowns to Tom Select for a consistent dark appearance.</p>
       </section>
 
       <section class="form-card">
@@ -517,7 +518,9 @@ form.addEventListener("submit", function (event) {
 
 loadProducts();
       setTimeout(() => {
-    new TomSelect("#productService", {
+    new TomSelect("#productService");
+
+    new TomSelect("#deviceType");
         create: false,
         sortField: {
             field: "text",
