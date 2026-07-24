@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BREAD Computer Repair | Request a Repair</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #09090f;
+        --panel: #14141d;
+        --panel-strong: #1b1b27;
+        --text: #ffffff;
+        --muted: #c5d0e5;
+        --accent: #00bfff;
+        --accent-strong: #2dc7ff;
+        --border: rgba(255, 255, 255, 0.12);
+        --shadow: 0 20px 45px rgba(0, 0, 0, 0.28);
+        --danger: #ff5d73;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        color: var(--text);
+        background: var(--bg);
+        overflow-x: hidden;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background:
+          radial-gradient(circle at top, rgba(0, 119, 255, 0.2), transparent 40%),
+          radial-gradient(circle at bottom right, rgba(0, 212, 255, 0.16), transparent 45%);
+        z-index: -1;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 10%;
+      }
+
+      .logo {
+        font-size: 30px;
+        font-weight: 700;
+        color: var(--accent);
+      }
+
+      nav a {
+        color: var(--text);
+        text-decoration: none;
+        margin-left: 25px;
+        transition: 0.3s;
+      }
+
+      nav a:hover {
+        color: var(--accent);
+      }
+
+      .page-shell {
+        width: min(1100px, calc(100% - 2rem));
+        margin: 0 auto;
+        padding: 2rem 0 4rem;
+      }
+
+      .hero {
+        background: linear-gradient(145deg, rgba(20, 20, 29, 0.96), rgba(10, 12, 20, 0.96));
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        box-shadow: var(--shadow);
+        padding: 2rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: auto auto -60px -60px;
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(0, 191, 255, 0.22), transparent 70%);
+        filter: blur(20px);
+      }
+
+      .hero-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.2rem;
+      }
+
+      .brand {
+        font-size: 1.2rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent-strong);
+      }
+
+      .hero-nav {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        flex-wrap: wrap;
+      }
+
+      .hero-nav a,
+      .back-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        text-decoration: none;
+        color: var(--text);
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.14);
+        padding: 0.7rem 1rem;
+        border-radius: 999px;
+        transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+      }
+
+      .hero-nav a:hover,
+      .back-btn:hover {
+        transform: translateY(-2px);
+        background: rgba(0, 191, 255, 0.16);
+        border-color: var(--accent);
+      }
+
+      .hero h1 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        margin: 0 0 0.6rem;
+      }
+
+      .hero p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.7;
+        max-width: 760px;
+      }
+
+      .form-card {
+        margin-top: 2rem;
+        background: linear-gradient(145deg, rgba(20, 20, 29, 0.96), rgba(10, 12, 20, 0.96));
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        box-shadow: var(--shadow);
+        padding: 1.5rem;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 0.45rem;
+      }
+
+      .field.full {
+        grid-column: 1 / -1;
+      }
+
+      label {
+        font-weight: 600;
+        color: var(--muted);
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 0.9rem 1rem;
+        border-radius: 12px;
+        border: 1px solid rgba(255,255,255,0.12);
+        background: rgba(255,255,255,0.04);
+        color: var(--text);
+        font: inherit;
+      }
+
+      textarea {
+        min-height: 170px;
+        resize: vertical;
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: none;
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px rgba(0, 191, 255, 0.16);
+      }
+
+      .submit-btn {
+        margin-top: 1rem;
+        border: none;
+        background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+        color: #031019;
+        padding: 0.9rem 1.3rem;
+        border-radius: 999px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .submit-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 24px rgba(0, 191, 255, 0.25);
+      }
+
+      .status {
+        margin-top: 1rem;
+        padding: 0.9rem 1rem;
+        border-radius: 12px;
+        display: none;
+        font-size: 0.95rem;
+      }
+
+      .status.error {
+        display: block;
+        background: rgba(255, 93, 115, 0.14);
+        color: #ffd9df;
+        border: 1px solid rgba(255, 93, 115, 0.2);
+      }
+
+      .status.success {
+        display: block;
+        background: rgba(57, 217, 138, 0.14);
+        color: #d9ffe8;
+        border: 1px solid rgba(57, 217, 138, 0.2);
+      }
+
+      @media (max-width: 760px) {
+        nav {
+          flex-direction: column;
+          gap: 0.8rem;
+          padding: 20px 5%;
+        }
+
+        nav a {
+          margin: 0 10px;
+        }
+
+        .hero {
+          padding: 1.3rem;
+        }
+
+        .hero-top {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .form-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">BREAD</div>
+      <div>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="news.html">News</a>
+        <a href="request-repair.html">Request a Repair</a>
+      </div>
+    </nav>
+
+    <main class="page-shell">
+      <section class="hero">
+        <div class="hero-top">
+          <div class="brand">BREAD Computer Repair</div>
+          <div class="hero-nav">
+            <a href="index.html">← Back to Home</a>
+            <a href="services.html">Services</a>
+            <a href="news.html">News</a>
+          </div>
+        </div>
+        <h1>Request a Repair</h1>
+        <p>Tell us about your device and the issue you are experiencing. We will review your request and get back to you as soon as possible.</p>
+      </section>
+
+      <section class="form-card">
+        <form id="repair-form">
+          <div class="form-grid">
+            <div class="field">
+              <label for="deviceType">Device Type</label>
+              <select id="deviceType" name="deviceType" required>
+                <option value="">Select device type</option>
+                <option>Desktop PC</option>
+                <option>Laptop</option>
+                <option>Custom PC</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="customerName">Customer Name</label>
+              <input id="customerName" name="customerName" type="text" required />
+            </div>
+
+            <div class="field">
+              <label for="email">Email Address</label>
+              <input id="email" name="email" type="email" required />
+            </div>
+
+            <div class="field">
+              <label for="phone">Phone Number</label>
+              <input id="phone" name="phone" type="tel" />
+            </div>
+
+            <div class="field">
+              <label for="preferredDate">Preferred Date</label>
+              <input id="preferredDate" name="preferredDate" type="date" />
+            </div>
+
+            <div class="field">
+              <label for="productService">Product / Service</label>
+              <select id="productService" name="productService"></select>
+            </div>
+
+            <div class="field full">
+              <label for="description">Describe the issue</label>
+              <textarea id="description" name="description" required></textarea>
+            </div>
+          </div>
+
+          <button class="submit-btn" type="submit">Submit Request</button>
+          <div id="formStatus" class="status" role="status" aria-live="polite"></div>
+        </form>
+      </section>
+    </main>
+
+    <script>
+      const form = document.getElementById('repair-form');
+      const productSelect = document.getElementById('productService');
+      const statusBox = document.getElementById('formStatus');
+
+      async function loadProducts() {
+        try {
+          const response = await fetch('products.json');
+          if (!response.ok) {
+            throw new Error('Unable to load products.');
+          }
+
+          const data = await response.json();
+          const entries = Array.isArray(data) ? data : [];
+          const options = [
+            { value: '', label: 'No Product / Custom' },
+            { value: 'divider', label: '-------------------', disabled: true }
+          ];
+
+          entries.forEach((item) => {
+            const label = item && item.name ? item.name : 'Untitled Item';
+            options.push({ value: label, label });
+          });
+
+          productSelect.innerHTML = options.map((option) => {
+            const attrs = option.disabled ? 'disabled' : '';
+            return `<option value="${escapeHtml(option.value)}" ${attrs}>${escapeHtml(option.label)}</option>`;
+          }).join('');
+        } catch (error) {
+          productSelect.innerHTML = '<option value="">No Product / Custom</option>';
+        }
+      }
+
+      function escapeHtml(value) {
+        return String(value)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;');
+      }
+
+      function showStatus(message, isError = false) {
+        statusBox.textContent = message;
+        statusBox.className = `status ${isError ? 'error' : 'success'}`;
+      }
+
+      function validateForm() {
+        const name = document.getElementById('customerName').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const deviceType = document.getElementById('deviceType').value;
+        const description = document.getElementById('description').value.trim();
+
+        if (!name || !email || !deviceType || !description) {
+          showStatus('Please complete the required fields: name, email, device type, and description.', true);
+          return false;
+        }
+
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+          showStatus('Please enter a valid email address.', true);
+          return false;
+        }
+
+        return true;
+      }
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        if (!validateForm()) {
+          return;
+        }
+
+        const data = {
+          customerName: document.getElementById('customerName').value.trim(),
+          email: document.getElementById('email').value.trim(),
+          phone: document.getElementById('phone').value.trim(),
+          deviceType: document.getElementById('deviceType').value,
+          productService: document.getElementById('productService').value,
+          preferredDate: document.getElementById('preferredDate').value,
+          description: document.getElementById('description').value.trim()
+        };
+
+        const subject = encodeURIComponent('BREAD Repair Request');
+        const body = encodeURIComponent(
+          `Customer Name: ${data.customerName}\n` +
+          `Email: ${data.email}\n` +
+          `Phone: ${data.phone || 'Not provided'}\n` +
+          `Device Type: ${data.deviceType}\n` +
+          `Product / Service: ${data.productService || 'No Product / Custom'}\n` +
+          `Preferred Date: ${data.preferredDate || 'Not provided'}\n` +
+          `Description: ${data.description}`
+        );
+
+        const mailtoLink = `mailto:kappe4@outlook.com?subject=${subject}&body=${body}`;
+        window.location.href = mailtoLink;
+        showStatus('Your request is opening in your email client.');
+      });
+
+      loadProducts();
+    </script>
+  </body>
+</html>
