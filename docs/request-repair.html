@@ -516,18 +516,19 @@ form.addEventListener("submit", function (event) {
 
 });
 
-loadProducts();
-      setTimeout(() => {
-    new TomSelect("#productService");
-
-    new TomSelect("#deviceType");
+loadProducts().then(() => {
+    new TomSelect("#productService", {
         create: false,
         sortField: {
             field: "text",
             direction: "asc"
         }
     });
-}, 500);
+
+    new TomSelect("#deviceType", {
+        create: false
+    });
+});
     </script>
   </body>
 </html>
