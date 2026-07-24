@@ -348,106 +348,116 @@
       </section>
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
     <script>
-      emailjs.init({ publicKey: “Yc3Zc2GwOjL7IU4g6”, });
+emailjs.init({
+    publicKey: "Yc3Zc2GwOjL7IU4g6",
+});
 
-const form = document.getElementById(‘repair-form’); const productSelect
-= document.getElementById(‘productService’); const statusBox =
-document.getElementById(‘formStatus’);
+const form = document.getElementById("repair-form");
+const productSelect = document.getElementById("productService");
+const statusBox = document.getElementById("formStatus");
 
-async function loadProducts() { try { const response = await
-fetch(‘products.json’); if (!response.ok) throw new Error();
+async function loadProducts() {
+    try {
+        const response = await fetch("products.json");
+        if (!response.ok) throw new Error();
 
         const data = await response.json();
         const entries = Array.isArray(data) ? data : [];
 
         const options = [
-            { value: '', label: 'No Product / Custom' },
-            { value: 'divider', label: '-------------------', disabled: true }
+            { value: "", label: "No Product / Custom" },
+            { value: "divider", label: "-------------------", disabled: true }
         ];
 
         entries.forEach(item => {
-            const label = item && item.name ? item.name : 'Untitled Item';
-            options.push({ value: label, label });
+            const label = item && item.name ? item.name : "Untitled Item";
+            options.push({
+                value: label,
+                label: label
+            });
         });
 
-        productSelect.innerHTML = options.map(option => {
-            const attrs = option.disabled ? 'disabled' : '';
-            return `<option value="${escapeHtml(option.value)}" ${attrs}>${escapeHtml(option.label)}</option>`;
-        }).join('');
-    } catch {
-        productSelect.innerHTML = '<option value="">No Product / Custom</option>';
-    }
+        productSelect.innerHTML = "";
 
+        options.forEach(option => {
+            const opt = document.createElement("option");
+            opt.value = option.value;
+            opt.textContent = option.label;
+            if (option.disabled) opt.disabled = true;
+            productSelect.appendChild(opt);
+        });
+
+    } catch (error) {
+        console.error(error);
+        productSelect.innerHTML =
+            '<option value="">No Product / Custom</option>';
+    }
 }
 
-function escapeHtml(value){ return String(value) .replace(/&/g,‘&’)
-.replace(/</g,‘<’) .replace(/>/g,‘>’) .replace(/“/g,‘"’)
-.replace(/‘/g,’'’); }
+function showStatus(message, isError = false) {
+    statusBox.textContent = message;
+    statusBox.className = isError ? "status error" : "status success";
+}
 
-function showStatus(message,isError=false){
-statusBox.textContent=message;
-statusBox.className=status ${isError?'error':'success'}; }
+function validateForm() {
 
-function validateForm(){ const
-name=document.getElementById(‘customerName’).value.trim(); const
-email=document.getElementById(‘email’).value.trim(); const
-deviceType=document.getElementById(‘deviceType’).value; const
-description=document.getElementById(‘description’).value.trim();
+    const name = document.getElementById("customerName").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const device = document.getElementById("deviceType").value;
+    const description = document.getElementById("description").value.trim();
 
-    if(!name||!email||!deviceType||!description){
-        showStatus('Please complete the required fields.',true);
+    if (!name || !email || !device || !description) {
+        showStatus("Please complete the required fields.", true);
         return false;
     }
-    return true;
 
+    return true;
 }
 
-form.addEventListener(‘submit’,(event)=>{ event.preventDefault();
+form.addEventListener("submit", function (event) {
 
-    if(!validateForm()) return;
+    event.preventDefault();
 
-    const data={
-        customerName:document.getElementById('customerName').value.trim(),
-        email:document.getElementById('email').value.trim(),
-        phone:document.getElementById('phone').value.trim(),
-        deviceType:document.getElementById('deviceType').value,
-        productService:document.getElementById('productService').value,
-        preferredDate:document.getElementById('preferredDate').value,
-        description:document.getElementById('description').value.trim()
+    if (!validateForm()) return;
+
+    const submitBtn = form.querySelector(".submit-btn");
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
+
+    const templateParams = {
+        customer_name: document.getElementById("customerName").value.trim(),
+        email: document.getElementById("email").value.trim(),
+        phone: document.getElementById("phone").value.trim() || "Not provided",
+        device_type: document.getElementById("deviceType").value,
+        product_service: document.getElementById("productService").value || "No Product / Custom",
+        preferred_date: document.getElementById("preferredDate").value || "Not provided",
+        description: document.getElementById("description").value.trim()
     };
-
-    const submitBtn=form.querySelector(".submit-btn");
-    submitBtn.disabled=true;
-    submitBtn.textContent="Sending...";
 
     emailjs.send(
         "service_kbaijco",
         "template_5ycl8kq",
-        {
-            customer_name:data.customerName,
-            email:data.email,
-            phone:data.phone||"Not provided",
-            device_type:data.deviceType,
-            product_service:data.productService||"No Product / Custom",
-            preferred_date:data.preferredDate||"Not provided",
-            description:data.description
-        }
-    ).then(()=>{
+        templateParams
+    )
+    .then(function () {
         showStatus("✅ Your repair request has been sent successfully.");
         form.reset();
-    }).catch((error)=>{
+    })
+    .catch(function (error) {
         console.error(error);
-        showStatus("❌ Failed to send your repair request.",true);
-    }).finally(()=>{
-        submitBtn.disabled=false;
-        submitBtn.textContent="Submit Request";
+        showStatus("❌ Failed to send your repair request.", true);
+    })
+    .finally(function () {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Submit Request";
     });
 
 });
 
 loadProducts();
-
     </script>
   </body>
 </html>
