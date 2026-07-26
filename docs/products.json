@@ -7,7 +7,15 @@
     "stock": true,
     "badge": "Best Value"
   },
-{
+  {
+    "category": "Service",
+    "name": "Phnoe Screen Cleaning",
+    "price": "€2.99",
+    "description": "Say bye to the fingerprints and dust!",
+    "stock": true,
+    "badge": "Best Value"
+  },
+  {
     "category": "Service",
     "name": "Keyboard Cleaning",
     "price": "€1",
