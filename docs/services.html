@@ -489,5 +489,44 @@
 
       loadCatalog();
     </script>
-  </body>
+
+<script>
+let typed = "";
+
+document.addEventListener("keydown", function(e){
+
+    if(e.key.length === 1){
+        typed += e.key.toLowerCase();
+    }
+
+    if(typed.length > 10){
+        typed = typed.slice(-10);
+    }
+
+    if(typed.includes("bread")){
+        window.location = "dontlook.html";
+    }
+
+    if(typed.includes("egg")){
+        window.location = "dashboard.html";
+    }
+
+    if (typed.includes("baguette")) {
+    document.body.innerHTML = `
+    <div style="
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100vh;
+        background:#111;
+        color:white;
+        font-family:Arial;
+        font-size:50px;">
+        🥖 Hon hon hon 🥖
+    </div>`;
+}
+    
+});
+</script>
+    </body>
 </html>
