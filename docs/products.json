@@ -156,7 +156,7 @@
     "category": "Product",
     "name": "Scart Cable",
     "price": "€1",
-    "description": "Useless",
+    "description": "Recommend this for the SONY CD/DVD player below!",
     "stock": true,
     "badge": "no"
   },
@@ -196,7 +196,7 @@
     "category": "Product",
     "name": "Unknown Cable (3pin) ",
     "price": "€4",
-    "description": "Useless",
+    "description": "No known usage.",
     "stock": true,
     "badge": "no"
   },
@@ -218,7 +218,7 @@
   },
   {
     "category": "Product",
-    "name": "Micro-USB 10cm",
+    "name": "2x Micro-USB 10cm",
     "price": "€2",
     "description": "No Decrption",
     "stock": true,
@@ -242,7 +242,7 @@
   },
   {
     "category": "Product",
-    "name": "Sony Playstation Analog Video Audio Connectors (PS1-3) ",
+    "name": "2x Sony Playstation Analog Video Audio Connectors (PS1-3) ",
     "price": "€40",
     "description": "PlayStation Cable for TV.",
     "stock": true,
@@ -255,5 +255,109 @@
     "description": "Console Skinning",
     "stock": true,
     "badge": ""
+  },
+  {
+    "category": "Product",
+    "name": "RGB Speaker + USB-A Wall Charger Kit",
+    "price": "€15",
+    "description": "The Speaker Connector is a little bent. It still works. Note: It Is not a Bluetooth Speaker.",
+    "stock": true,
+    "badge": "Best Value"
+  },
+  {
+    "category": "Product",
+    "name": "SONY CD/DVD Player",
+    "price": "€10 ---€6---",
+    "description": "Scart And Audio CD/DVD Player made by Sony (AUDIO CABLE INCLUDED) ",
+    "stock": true,
+    "badge": "SALE"
+  },
+  {
+    "category": "Product",
+    "name": "Fujitsu USB Type-C Port Replicator",
+    "price": "€8",
+    "description": "Connect with ethernet, Display port, HDMI, VGA, 3x USB-A, 2x USB-C, Audio Connector and Fujitsu Power! Usefull for Docking Laptops.",
+    "stock": true,
+    "badge": "Best Value"
+  },
+  {
+    "category": "Product",
+    "name": "Fujitsu USB-C Cable",
+    "price": "€3",
+    "description": "Recommend buying this with the type-c replicator.",
+    "stock": true,
+    "badge": "NEW"
+  },
+  {
+    "category": "Product",
+    "name": "Antenna Cable for TV",
+    "price": "€4",
+    "description": "Watch Antenna TV today!",
+    "stock": true,
+    "badge": ""
+  },
+  {
+    "category": "Product",
+    "name": "3x SONY PlayStation 1 and 2 Controllers",
+    "price": "€40 EACH",
+    "description": "Very Rare to find after 2020 or longer!",
+    "stock": true,
+    "badge": ""
+  },
+  {
+    "category": "Product",
+    "name": "Mechanical timer Power socket",
+    "price": "€9",
+    "description": "Your kids scared to go and sleep in the dark? Well this is perfect for you.",
+    "stock": true,
+    "badge": "NEW"
+  },
+  {
+    "category": "Product",
+    "name": "Nedio Bluetooth Speaker",
+    "price": "€20",
+    "description": "DC in 5V and 1A. Great and tested to fit even in size 140 shorts and bigger!",
+    "stock": true,
+    "badge": "Best Value"
+  },
+  {
+    "category": "Product",
+    "name": "White Shark RGB Gaming Mouse Wired",
+    "price": "€10",
+    "description": "Does not work good with Ubuntu. But works on other devices like phones with a dock!",
+    "stock": true,
+    "badge": "NEW"
+  },
+  {
+    "category": "Product",
+    "name": "Light switch to your wall socket",
+    "price": "€5",
+    "description": "Plug this boy in the wall and you got a "light switch" in your room!",
+    "stock": true,
+    "badge": ""
+  },
+  {
+    "category": "Product",
+    "name": "USB 2.0 Drive 8GB",
+    "price": "€10",
+    "description": "Slow but good for storing personal passwords and other!",
+    "stock": true,
+    "badge": "Best value"
+  },
+  {
+    "category": "Product",
+    "name": "Old dirty Logitech Mouse",
+    "price": "€7",
+    "description": "If you like dirty gaming mouses, buy one of these.",
+    "stock": true,
+    "badge": ""
+  },
+  {
+    "category": "Product",
+    "name": "TRUST Speakers Wired",
+    "price": "€10",
+    "description": "Wires tangled in the shop but we can get it untagled for you if you want to!",
+    "stock": true,
+    "badge": "NEW"
   }
 ]
