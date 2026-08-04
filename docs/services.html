@@ -60,6 +60,12 @@
         padding: 2rem;
         position: relative;
         overflow: visible;
+        display:flex;
+        justify-content:space-between;
+        align-items:flex-start;
+        gap:30px;
+        flex-wrap:wrap;
+      }
       }
 
       .hero::after {
@@ -79,6 +85,11 @@
         align-items: center;
         gap: 1rem;
         margin-bottom: 1.2rem;
+      }
+
+      .hero-text{
+        flex:1;
+        min-width:350px;
       }
 
       .brand {
@@ -394,16 +405,16 @@
             <a class="back-btn" href="request-repair.html">🛠 Request a Repair</a>
           </div>
         </div>
-        <h1>Services & Products</h1>
+        <div class="hero-text">
+    <h1>Services & Products</h1>
 
-<p>
-Reliable repairs, fast upgrades, and premium accessories delivered with expert care.
-Browse our current offerings below.
-⚠️ Known UI Bug: The stock badge may appear slightly out of position on some cards.
-This will be fixed in a future update + Coupons in the same Update.
-</p>
-
-<!-- 🎁 Gift Card Box goes here -->
+    <p>
+        Reliable repairs, fast upgrades, and premium accessories delivered with expert care.
+        Browse our current offerings below.
+        ⚠️ Known UI Bug: The stock badge may appear slightly out of position on some cards.
+        This will be fixed in a future update + Coupons in the same Update.
+    </p>
+</div>
 
 <div class="gift-card-box">
 
