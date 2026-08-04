@@ -129,6 +129,28 @@ textarea{
     font-size:14px;
 }
 
+.status{
+    display:none;
+    margin-top:20px;
+    padding:14px;
+    border-radius:12px;
+    font-weight:600;
+}
+
+.status.success{
+    display:block;
+    background:#143d26;
+    color:#7dffb2;
+    border:1px solid #2ecc71;
+}
+
+.status.error{
+    display:block;
+    background:#401919;
+    color:#ff8d8d;
+    border:1px solid #ff5d5d;
+}    
+
 @media(max-width:600px){
 
 .wrapper{
@@ -202,6 +224,8 @@ Purchase a Physical Card or E-Card for repairs, cleaning and upgrades.
     🍞 Purchase BREAD Gift Card →
 </button>
 
+<div id="statusBox" class="status"></div>
+    
 </div>
 
 <div>
@@ -237,27 +261,121 @@ Redeem during a repair request.
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    
+
 <script>
+
 emailjs.init({
     publicKey: "Yc3Zc2GwOjL7IU4g6",
 });
 
-const buttons=document.querySelectorAll(".valueBtn");
-const money=document.getElementById("money");
+const form = document.getElementById("giftcard-form");
+const buttons = document.querySelectorAll(".valueBtn");
+const money = document.getElementById("money");
+const giftValue = document.getElementById("giftValue");
+const statusBox = document.getElementById("statusBox");
+const submitBtn = document.querySelector('button[type="submit"]');
 
-buttons.forEach(btn=>{
+buttons.forEach(btn => {
 
-btn.onclick=()=>{
+    btn.addEventListener("click", function(e){
 
-buttons.forEach(b=>b.classList.remove("active"));
+        e.preventDefault();
 
-btn.classList.add("active");
+        buttons.forEach(b => b.classList.remove("active"));
 
-money.textContent=btn.textContent;
-document.getElementById("giftValue").value = btn.textContent;
-    
-};
+        this.classList.add("active");
+
+        money.textContent = this.textContent;
+
+        giftValue.value = this.textContent;
+
+    });
+
+});
+
+function showStatus(message, success){
+
+    statusBox.textContent = message;
+
+    if(success){
+
+        statusBox.className = "status success";
+
+    }else{
+
+        statusBox.className = "status error";
+
+    }
+
+}
+
+form.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    submitBtn.disabled = true;
+
+    submitBtn.textContent = "Sending...";
+
+    const templateParams = {
+
+        customer_name: document.getElementById("customerName").value.trim(),
+
+        email: document.getElementById("email").value.trim(),
+
+        phone: document.getElementById("phone").value.trim() || "Not provided",
+
+        giftcard_value: giftValue.value,
+
+        delivery: document.getElementById("delivery").value,
+
+        gift_message: document.getElementById("giftMessage").value.trim() || "None",
+
+        preferred_date: document.getElementById("preferredDate").value || "Not provided"
+
+    };
+
+    emailjs.send(
+
+        "service_kbaijco",
+
+        "template_zrhptli",
+
+        templateParams
+
+    )
+
+    .then(function(){
+
+        showStatus("✅ Gift card purchase request sent successfully!", true);
+
+        form.reset();
+
+        giftValue.value = "€5";
+
+        money.textContent = "€5";
+
+        buttons.forEach(b => b.classList.remove("active"));
+
+        buttons[0].classList.add("active");
+
+    })
+
+    .catch(function(error){
+
+        console.error(error);
+
+        showStatus("❌ Failed to send gift card purchase request.", false);
+
+    })
+
+    .finally(function(){
+
+        submitBtn.disabled = false;
+
+        submitBtn.textContent = "🍞 Purchase BREAD Gift Card →";
+
+    });
 
 });
 
