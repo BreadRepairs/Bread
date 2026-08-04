@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buy a Gift Card | BREAD Computer Repair</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    background:#09090f;
+    color:white;
+    font-family:Poppins,sans-serif;
+}
+
+.container{
+    width:min(1100px,95%);
+    margin:auto;
+    padding:40px 0;
+}
+
+h1{
+    color:#00bfff;
+    text-align:center;
+}
+
+.subtitle{
+    text-align:center;
+    color:#bfc7d5;
+    margin-bottom:40px;
+}
+
+.wrapper{
+    display:grid;
+    grid-template-columns:1fr 380px;
+    gap:40px;
+}
+
+.card{
+    background:#14141d;
+    border-radius:20px;
+    padding:25px;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:5px;
+}
+
+input,select,textarea{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:#1d1d28;
+    color:white;
+}
+
+textarea{
+    min-height:120px;
+}
+
+.values{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:10px;
+    margin-top:10px;
+}
+
+.valueBtn{
+    padding:12px;
+    background:#1d1d28;
+    border:none;
+    border-radius:12px;
+    color:white;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.valueBtn:hover{
+    background:#00bfff;
+}
+
+.valueBtn.active{
+    background:#00bfff;
+}
+
+.submit{
+    margin-top:25px;
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:14px;
+    background:#00bfff;
+    color:black;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.preview{
+    background:linear-gradient(135deg,#00bfff,#006aff);
+    border-radius:25px;
+    padding:35px;
+    height:240px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    transition:.25s;
+}
+
+.preview:hover{
+    transform:rotateY(6deg) rotateX(4deg);
+}
+
+.preview h2{
+    margin:0;
+}
+
+.money{
+    font-size:55px;
+    font-weight:bold;
+}
+
+.footer{
+    font-size:14px;
+}
+
+@media(max-width:900px){
+
+.wrapper{
+grid-template-columns:1fr;
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🎁 Buy a BREAD Gift Card</h1>
+
+<p class="subtitle">
+Purchase a Physical Card or E-Card for repairs, cleaning and upgrades.
+</p>
+
+<div class="wrapper">
+
+<div class="card">
+
+<label>Name *</label>
+<input>
+
+<label>Email *</label>
+<input>
+
+<label>Phone</label>
+<input>
+
+<label>Gift Card Value *</label>
+
+<div class="values">
+
+<button class="valueBtn active">€5</button>
+<button class="valueBtn">€10</button>
+<button class="valueBtn">€20</button>
+<button class="valueBtn">€50</button>
+<button class="valueBtn">€100</button>
+
+</div>
+
+<label>Delivery *</label>
+
+<select>
+
+<option>E-Card</option>
+<option>Physical Card</option>
+
+</select>
+
+<label>Gift Message</label>
+
+<textarea placeholder="Happy Birthday!"></textarea>
+
+<label>Preferred Delivery Date</label>
+
+<input type="date">
+
+<button class="submit">
+🎁 Purchase Gift Card
+</button>
+
+</div>
+
+<div>
+
+<div class="preview">
+
+<div>
+
+<h2>🍞 BREAD</h2>
+
+Gift Card
+
+</div>
+
+<div class="money" id="money">
+
+€5
+
+</div>
+
+<div class="footer">
+
+Redeem during a repair request.
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const buttons=document.querySelectorAll(".valueBtn");
+const money=document.getElementById("money");
+
+buttons.forEach(btn=>{
+
+btn.onclick=()=>{
+
+buttons.forEach(b=>b.classList.remove("active"));
+
+btn.classList.add("active");
+
+money.textContent=btn.textContent;
+
+};
+
+});
+
+</script>
+
+</body>
+</html>
