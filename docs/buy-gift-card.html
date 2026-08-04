@@ -152,16 +152,16 @@ Purchase a Physical Card or E-Card for repairs, cleaning and upgrades.
 
 <div class="wrapper">
 
-<div class="card">
+<form id="giftcard-form" class="card">
 
 <label>Name *</label>
-<input>
+<input id="customerName" required>
 
 <label>Email *</label>
-<input>
+<input id="email" type="email" required>
 
 <label>Phone</label>
-<input>
+<input id="phone">
 
 <label>Gift Card Value *</label>
 
@@ -175,6 +175,8 @@ Purchase a Physical Card or E-Card for repairs, cleaning and upgrades.
 
 </div>
 
+<input type="hidden" id="giftValue" value="€5">
+
 <label>Delivery *</label>
 
 <select>
@@ -182,21 +184,21 @@ Purchase a Physical Card or E-Card for repairs, cleaning and upgrades.
 <option>E-Card</option>
 <option>Physical Card</option>
 
-</select>
+<select id="delivery">
 
 <label>Gift Message</label>
 
-<textarea placeholder="Happy Birthday!"></textarea>
+<textarea id="giftMessage" placeholder="Happy Birthday!"></textarea>
 
 <label>Preferred Delivery Date</label>
 
-<input type="date">
+<input id="preferredDate" type="date">
 
-<button class=".submit" type="button" onclick="window.location.href='services.html'">
+<button class="submit" type="button" onclick="window.location.href='services.html'">
     ← Back
 </button> 
 
-<button class=".submit" type="submit">
+<button class="submit" type="submit">
     🍞 Purchase BREAD Gift Card →
 </button>
 
@@ -234,7 +236,12 @@ Redeem during a repair request.
 
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
 <script>
+emailjs.init({
+    publicKey: "Yc3Zc2GwOjL7IU4g6",
+});
 
 const buttons=document.querySelectorAll(".valueBtn");
 const money=document.getElementById("money");
@@ -248,12 +255,13 @@ buttons.forEach(b=>b.classList.remove("active"));
 btn.classList.add("active");
 
 money.textContent=btn.textContent;
-
+document.getElementById("giftValue").value = btn.textContent;
+    
 };
 
 });
 
 </script>
 
-</body>
+</form>
 </html>
