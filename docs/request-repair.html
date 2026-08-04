@@ -502,6 +502,8 @@ form.addEventListener("submit", function (event) {
         product_service: document.getElementById("productService").value || "No Product / Custom",
         preferred_date: document.getElementById("preferredDate").value || "Not provided",
         description: document.getElementById("description").value.trim()
+        gift_card: document.getElementById("giftCardCode").value.trim() ? "YES" : "NO",
+        gift_card_code: document.getElementById("giftCardCode").value.trim() || "None"
     };
 
     emailjs.send(
