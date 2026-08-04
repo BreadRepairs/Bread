@@ -390,15 +390,23 @@
             </div>
 
             <div class="field">
-              <label for="productService">Product / Service</label>
-              <select id="productService" name="productService"></select>
-            </div>
+    <label for="productService">Product / Service</label>
+    <select id="productService" name="productService"></select>
+</div>
 
-            <div class="field full">
-              <label for="description">Describe the issue</label>
-              <textarea id="description" name="description" required></textarea>
-            </div>
-          </div>
+<div class="field">
+    <label for="giftCardCode">Gift Card Code (Optional)</label>
+    <input
+        id="giftCardCode"
+        name="giftCardCode"
+        type="text"
+        placeholder="Example: BREAD-7XQ2-LM8P">
+</div>
+
+<div class="field full">
+    <label for="description">Describe the issue</label>
+    <textarea id="description" name="description" required></textarea>
+</div>
 
           <button class="submit-btn" type="submit">Submit Request</button>
           <div id="formStatus" class="status" role="status" aria-live="polite"></div>
