@@ -269,7 +269,7 @@
     "name": "SONY CD/DVD Player",
     "price": "€10 ---€6---",
     "description": "Scart And Audio CD/DVD Player made by Sony (AUDIO CABLE INCLUDED) ",
-    "stock": true,
+    "stock": false,
     "badge": "SALE"
   },
   {
