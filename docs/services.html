@@ -108,6 +108,48 @@
         border-color: var(--accent);
       }
 
+      .gift-card-box{
+        background:linear-gradient(145deg,#121d33,#0c1627);
+        border:1px solid var(--border);
+        border-radius:20px;
+        padding:18px;
+        width:320px;
+        display:flex;
+        flex-direction:column;
+        gap:10px;
+        box-shadow:var(--shadow);
+      }
+
+      .gift-card-box h3{
+          margin:0;
+          color:var(--accent-strong);
+          font-size:1.2rem;
+      }
+
+      .gift-card-box p{
+        margin:0;
+        color:var(--muted);
+        line-height:1.5;
+      }
+
+.gift-btn{
+    margin-top:10px;
+    display:inline-block;
+    text-align:center;
+    text-decoration:none;
+    background:linear-gradient(135deg,#2ea8ff,#4ce3ff);
+    color:#08111f;
+    font-weight:700;
+    padding:12px;
+    border-radius:12px;
+    transition:.25s;
+}
+
+.gift-btn:hover{
+    transform:translateY(-2px);
+    filter:brightness(1.08);
+}
+      
       .hero h1 {
         font-size: clamp(2rem, 4vw, 3rem);
         margin: 0 0 0.6rem;
@@ -349,10 +391,33 @@
           </div>
         </div>
         <h1>Services & Products</h1>
-        <p>Reliable repairs, fast upgrades, and premium accessories delivered with expert care. Browse our current offerings below.
-        ⚠️ Known UI Bug: The stock badge may appear slightly out of position on some cards. This will be fixed in a future update + Coupons in the same Update.</p>
-      </section>
 
+<p>
+Reliable repairs, fast upgrades, and premium accessories delivered with expert care.
+Browse our current offerings below.
+⚠️ Known UI Bug: The stock badge may appear slightly out of position on some cards.
+This will be fixed in a future update + Coupons in the same Update.
+</p>
+
+<!-- 🎁 Gift Card Box goes here -->
+
+<div class="gift-card-box">
+
+    <h3>🎁 BREAD Gift Cards</h3>
+
+    <p>
+        Physical & E-Cards<br>
+        Starting from <strong>€5 to €100</strong>
+    </p>
+
+    <a href="buy-gift-card.html" class="gift-btn">
+        Buy Gift Card →
+    </a>
+
+</div>
+
+</section>
+      
       <section id="catalog" class="section-block"></section>
     </main>
 
