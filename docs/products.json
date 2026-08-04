@@ -261,16 +261,16 @@
     "name": "RGB Speaker + USB-A Wall Charger Kit",
     "price": "€15",
     "description": "The Speaker Connector is a little bent. It still works. Note: It Is not a Bluetooth Speaker.",
-    "stock": true,
+    "stock": false,
     "badge": "Best Value"
   },
   {
     "category": "Product",
     "name": "SONY CD/DVD Player",
-    "price": "€10 ---€6---",
+    "price": "€10",
     "description": "Scart And Audio CD/DVD Player made by Sony (AUDIO CABLE INCLUDED) ",
-    "stock": false,
-    "badge": "SALE"
+    "stock": true,
+    "badge": ""
   },
   {
     "category": "Product",
