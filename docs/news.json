@@ -47,5 +47,13 @@
     "description": "BREAD has earned atleast over 20 with several reciepts sent.",
     "fullText": "BREAD has earned atleast over 20 with several reciepts sent. More info soon.",
     "link": ""
+  },
+  {
+    "id": 7,
+    "name": "Gift Cards Have Officially Arrived at BREAD! 🎁",
+    "date": "August 5 2026",
+    "description": "Purchase digital or physical BREAD Gift Cards for friends and family. Starting from just €5!",
+    "fullText": "We're excited to announce that BREAD Gift Cards are now available! You can purchase physical or digital gift cards from €5 to €100, making them a great choice for birthdays, holidays, or anyone who needs a computer repair or upgrade. Our new online ordering system makes buying a gift card quick and easy, and we're looking forward to bringing even more features and improvements to BREAD Computer Repair in future updates. Thank you for your continued support! 🍞💙",
+    "link": "breadrepairs.github.io/Bread/buy-gift-card.html"
   }
 ]
