@@ -60,12 +60,6 @@
         padding: 2rem;
         position: relative;
         overflow: visible;
-        display:flex;
-        justify-content:space-between;
-        align-items:flex-start;
-        gap:30px;
-        flex-wrap:wrap;
-      }
       }
 
       .hero::after {
@@ -77,10 +71,6 @@
         border-radius: 50%;
         background: radial-gradient(circle, rgba(46, 168, 255, 0.25), transparent 70%);
         filter: blur(20px);
-        display:flex;
-        justify-content:space-between;
-        align-items:flex-start;
-        gap:35px;
       }
 
       .hero-top {
@@ -96,6 +86,15 @@
         flex:1;
         min-width:350px;
       }
+
+      .hero-content{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:40px;
+    margin-top:20px;
+    flex-wrap:wrap;
+}
 
       .brand {
         font-size: 1.2rem;
@@ -134,7 +133,7 @@
     flex-direction:column;
     gap:10px;
     box-shadow:var(--shadow);
-      }      
+}  
 
       .gift-card-box h3{
           margin:0;
@@ -406,32 +405,39 @@
             <a class="back-btn" href="request-repair.html">🛠 Request a Repair</a>
           </div>
         </div>
-        <div class="hero-text">
-    <h1>Services & Products</h1>
+        <div class="hero-content">
 
-    <p>
-        Reliable repairs, fast upgrades, and premium accessories delivered with expert care.
-        Browse our current offerings below.
-        ⚠️ Known UI Bug: The stock badge may appear slightly out of position on some cards.
-        This will be fixed in a future update + Coupons in the same Update. And 05/8/2026 we will fix the ui bug for the gift card buy thing. Thank you!
-    </p>
+    <div class="hero-text">
+
+        <h1>Services & Products</h1>
+
+        <p>
+            Reliable repairs, fast upgrades, and premium accessories delivered with expert care.
+            Browse our current offerings below.
+            ⚠️ Known UI Bug: The stock badge may appear slightly out of position on some cards.
+            This will be fixed in a future update + Coupons in the same Update.
+            And 05/8/2026 we will fix the UI bug for the gift card buy thing. Thank you!
+        </p>
+
+    </div>
+
+    <div class="gift-card-box">
+
+        <h3>🎁 BREAD Gift Cards</h3>
+
+        <p>
+            Physical & E-Cards<br>
+            Starting from <strong>€5 to €100</strong>
+        </p>
+
+        <a href="buy-gift-card.html" class="gift-btn">
+            Buy Gift Card →
+        </a>
+
+    </div>
+
 </div>
-
-<div class="gift-card-box">
-
-    <h3>🎁 BREAD Gift Cards</h3>
-
-    <p>
-        Physical & E-Cards<br>
-        Starting from <strong>€5 to €100</strong>
-    </p>
-
-    <a href="buy-gift-card.html" class="gift-btn">
-        Buy Gift Card →
-    </a>
-
-</div>
-
+        
 </section>
       
       <section id="catalog" class="section-block"></section>
