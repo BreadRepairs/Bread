@@ -359,5 +359,69 @@
     "description": "Wires tangled in the shop but we can get it untagled for you if you want to!",
     "stock": true,
     "badge": "NEW"
+  },
+  {
+    "category": "Product",
+    "name": "3x Connector for Room Lights (Cable not included) ",
+    "price": "€5 EACH",
+    "description": "One can handle 5kg of weight and the other 2 15kg",
+    "stock": true,
+    "badge": "New"
+  },
+  {
+    "category": "Product",
+    "name": "Unknown Nokia 5V 1 Pin Cable",
+    "price": "€2",
+    "description": "Unkown 1 pin NOKIA Cable",
+    "stock": true,
+    "badge": ""
+  },
+  {
+    "category": "Product",
+    "name": "2x Lamp Plug Cable",
+    "price": "€4 EACH",
+    "description": "Cable for the Connector for Room Lights",
+    "stock": true,
+    "badge": "New"
+  },
+  {
+    "category": "Product",
+    "name": "RJ11 Cable (European Finland) ",
+    "price": "€3",
+    "description": "Cable to the wall and get RJ11 Signals",
+    "stock": true,
+    "badge": ""
+  },
+  {
+    "category": "Product",
+    "name": "2x Unknown Audio Cable",
+    "price": "€4",
+    "description": "Unknown Audio Cable, No Information Found",
+    "stock": true,
+    "badge": ""
+  },
+  {
+    "category": "Product",
+    "name": "Audio Video Cable (Analog) ",
+    "price": "€4",
+    "description": "No information",
+    "stock": true,
+    "badge": ""
+  },
+  {
+    "category": "Product",
+    "name": "Unknown Cable",
+    "price": "€2",
+    "description": "No Information",
+    "stock": true,
+    "badge": ""
+  },
+  {
+    "category": "Product",
+    "name": "Microphone and Speaker Connector to One Connector",
+    "price": "€3",
+    "description": "Come to the shop for more Info",
+    "stock": true,
+    "badge": ""
   }
 ]
