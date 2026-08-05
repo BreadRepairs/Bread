@@ -8,5 +8,10 @@
         "code": "BREAD-9H67-L3NN",
         "value": 5,
         "redeemed": false
+    },
+    {
+        "code": "BREAD-QX9F-0JD8",
+        "value": 10,
+        "redeemed": false
     }
 ]
