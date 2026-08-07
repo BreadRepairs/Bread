@@ -405,5 +405,25 @@
 
       loadNews();
     </script>
+
+    <script>
+let typed = "";
+
+document.addEventListener("keydown", function(e) {
+
+    if (e.key.length === 1) {
+        typed += e.key.toLowerCase();
+    }
+
+    if (typed.length > 10) {
+        typed = typed.slice(-10);
+    }
+
+    if (typed.includes("no")) {
+        window.location.href = "something.html";
+    }
+
+});
+    </script>
   </body>
 </html>
