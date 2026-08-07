@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🍞 BREAD PC Repair Game</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top, #12345a, transparent 45%),
+        #05070c;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.game {
+    width: min(900px, 94%);
+    margin: 30px auto;
+    padding: 25px;
+    background: #0d111a;
+    border: 1px solid #00bfff;
+    border-radius: 22px;
+    box-shadow:
+        0 0 40px rgba(0,191,255,.18),
+        0 20px 60px rgba(0,0,0,.6);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.title {
+    margin: 0;
+    color: #00bfff;
+    font-size: clamp(1.7rem, 4vw, 2.5rem);
+}
+
+.subtitle {
+    color: #9eb0c9;
+    margin: 5px 0 0;
+}
+
+.close-btn {
+    border: 1px solid #444;
+    background: #171c27;
+    color: white;
+    border-radius: 10px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    background: #292f3c;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.stat {
+    background: #141a25;
+    border: 1px solid #263246;
+    border-radius: 14px;
+    padding: 14px;
+    text-align: center;
+}
+
+.stat-label {
+    display: block;
+    color: #8192aa;
+    font-size: 13px;
+}
+
+.stat-value {
+    display: block;
+    margin-top: 4px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #4ce3ff;
+}
+
+.warning {
+    color: #ffd45c !important;
+}
+
+.danger {
+    color: #ff5d73 !important;
+}
+
+.panel {
+    background: #111722;
+    border: 1px solid #263246;
+    border-radius: 18px;
+    padding: 20px;
+}
+
+.start,
+.end {
+    text-align: center;
+}
+
+.start h2,
+.end h2 {
+    color: #4ce3ff;
+    font-size: 2rem;
+}
+
+.big-button {
+    border: none;
+    background: linear-gradient(135deg, #00bfff, #4ce3ff);
+    color: #041019;
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.big-button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.08);
+}
+
+.problem {
+    color: white;
+    font-size: 1.25rem;
+    margin: 0 0 18px;
+    line-height: 1.5;
+}
+
+.pc {
+    position: relative;
+    width: min(520px, 100%);
+    margin: 0 auto 20px;
+    background: #080b11;
+    border: 3px solid #303a4d;
+    border-radius: 16px;
+    padding: 18px;
+}
+
+.monitor {
+    height: 190px;
+    background: #020508;
+    border: 5px solid #424d60;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #00ff9d;
+    font-family: monospace;
+    font-size: 18px;
+    box-shadow: inset 0 0 25px rgba(0,255,157,.08);
+}
+
+.monitor.broken {
+    color: #ff5d73;
+}
+
+.monitor.fixed {
+    color: #4ce3ff;
+}
+
+.pc-base {
+    width: 45%;
+    height: 15px;
+    background: #424d60;
+    margin: 8px auto 0;
+    border-radius: 10px;
+}
+
+.components {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.component {
+    border: 1px solid #344158;
+    background: #151c29;
+    color: white;
+    border-radius: 12px;
+    padding: 14px;
+    cursor: pointer;
+    text-align: left;
+    transition: .18s;
+    font-size: 15px;
+}
+
+.component:hover {
+    transform: translateY(-2px);
+    border-color: #00bfff;
+    background: #1b2637;
+}
+
+.component:disabled {
+    cursor: default;
+    opacity: .55;
+}
+
+.log {
+    min-height: 80px;
+    max-height: 130px;
+    overflow-y: auto;
+    background: #080b11;
+    border: 1px solid #222c3d;
+    border-radius: 12px;
+    padding: 12px;
+    margin-top: 15px;
+    font-family: monospace;
+    font-size: 13px;
+    color: #9eb0c9;
+}
+
+.log div {
+    margin-bottom: 5px;
+}
+
+.correct {
+    color: #39d98a;
+}
+
+.wrong {
+    color: #ff5d73;
+}
+
+.neutral {
+    color: #4ce3ff;
+}
+
+.final-score {
+    font-size: 3rem;
+    color: #00bfff;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+@media(max-width:600px) {
+
+    .game {
+        margin: 10px auto;
+        padding: 15px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .components {
+        grid-template-columns: 1fr;
+    }
+
+    .monitor {
+        height: 150px;
+        font-size: 14px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="game">
+
+    <div class="header">
+
+        <div>
+            <h1 class="title">🍞 BREAD PC REPAIR</h1>
+
+            <p class="subtitle">
+                Secret Technician Training Simulator
+            </p>
+        </div>
+
+        <button
+            class="close-btn"
+            onclick="window.close()">
+            ✕ Close
+        </button>
+
+    </div>
+
+
+    <!-- START SCREEN -->
+
+    <div id="startScreen" class="start">
+
+        <div class="panel">
+
+            <h2>🛠 Technician Needed</h2>
+
+            <p>
+                A customer's computer has stopped working.
+            </p>
+
+            <p>
+                Find the broken component and fix the PC
+                before time runs out.
+            </p>
+
+            <p>
+                ⚠️ Wrong choices waste time.
+            </p>
+
+            <button
+                class="big-button"
+                onclick="startGame()">
+
+                🍞 Start Repair
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- GAME -->
+
+    <div id="gameScreen" class="hidden">
+
+        <div class="stats">
+
+            <div class="stat">
+
+                <span class="stat-label">
+                    TIME
+                </span>
+
+                <span
+                    id="timer"
+                    class="stat-value">
+
+                    60
+
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <span class="stat-label">
+                    SCORE
+                </span>
+
+                <span
+                    id="score"
+                    class="stat-value">
+
+                    0
+
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <span class="stat-label">
+                    REPAIRS
+                </span>
+
+                <span
+                    id="repairs"
+                    class="stat-value">
+
+                    0
+
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="panel">
+
+            <p
+                id="problem"
+                class="problem">
+
+                Loading problem...
+
+            </p>
+
+
+            <div class="pc">
+
+                <div
+                    id="monitor"
+                    class="monitor broken">
+
+                    SYSTEM ERROR<br>
+                    DIAGNOSTIC REQUIRED
+
+                </div>
+
+                <div class="pc-base"></div>
+
+
+                <div class="components">
+
+                    <button
+                        class="component"
+                        onclick="checkComponent('power')">
+
+                        🔌 Power Supply
+
+                    </button>
+
+
+                    <button
+                        class="component"
+                        onclick="checkComponent('ram')">
+
+                        🧠 RAM
+
+                    </button>
+
+
+                    <button
+                        class="component"
+                        onclick="checkComponent('ssd')">
+
+                        💾 SSD
+
+                    </button>
+
+
+                    <button
+                        class="component"
+                        onclick="checkComponent('cpu')">
+
+                        🌡️ CPU
+
+                    </button>
+
+
+                    <button
+                        class="component"
+                        onclick="checkComponent('fan')">
+
+                        🌀 CPU Fan
+
+                    </button>
+
+
+                    <button
+                        class="component"
+                        onclick="checkComponent('monitor')">
+
+                        🖥️ Monitor
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="log"
+                class="log">
+
+                <div class="neutral">
+                    [SYSTEM] Technician console ready.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- END SCREEN -->
+
+    <div id="endScreen" class="end hidden">
+
+        <div class="panel">
+
+            <h2 id="endTitle">
+                🍞 PC Repaired!
+            </h2>
+
+            <p>
+                Final Score
+            </p>
+
+            <div
+                id="finalScore"
+                class="final-score">
+
+                0
+
+            </div>
+
+            <p id="endMessage">
+                Nice work, technician.
+            </p>
+
+            <button
+                class="big-button"
+                onclick="startGame()">
+
+                🔧 Repair Again
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+let gameRunning = false;
+
+let time = 60;
+
+let score = 0;
+
+let repairs = 0;
+
+let timerInterval = null;
+
+let currentProblem = null;
+
+
+/*
+=========================================================
+PROBLEMS
+=========================================================
+*/
+
+const problems = [
+
+    {
+        text: "⚠️ PC won't turn on. Find the problem.",
+        answer: "power",
+        success: "Power cable reseated. The PC has power again!"
+    },
+
+    {
+        text: "⚠️ PC turns on but keeps crashing. Find the problem.",
+        answer: "ram",
+        success: "RAM reseated. Memory test passed!"
+    },
+
+    {
+        text: "⚠️ Windows cannot find the boot drive.",
+        answer: "ssd",
+        success: "SSD connection restored. Boot drive detected!"
+    },
+
+    {
+        text: "🔥 CPU temperature is 104°C!",
+        answer: "fan",
+        success: "CPU fan restored. Temperature is dropping!"
+    },
+
+    {
+        text: "🌡️ CPU is reporting completely impossible temperatures.",
+        answer: "cpu",
+        success: "CPU thermal sensor checked. Temperature is normal!"
+    },
+
+    {
+        text: "🖥️ The PC works, but the screen stays black.",
+        answer: "monitor",
+        success: "Monitor connection restored. We have a picture!"
+    },
+
+    {
+        text: "💾 Storage is detected but Windows is extremely slow.",
+        answer: "ssd",
+        success: "SSD health checked. Storage is operating normally!"
+    },
+
+    {
+        text: "🧠 PC gives three suspicious memory beeps.",
+        answer: "ram",
+        success: "RAM reseated. The mysterious beeping has stopped!"
+    },
+
+    {
+        text: "🥖 BIOS says: BAGUETTE NOT FOUND.",
+        answer: "cpu",
+        success: "BIOS recovered. Unfortunately, the baguette is still missing."
+    }
+
+];
+
+
+/*
+=========================================================
+START GAME
+=========================================================
+*/
+
+function startGame() {
+
+    gameRunning = true;
+
+    time = 60;
+
+    score = 0;
+
+    repairs = 0;
+
+
+    document
+        .getElementById("startScreen")
+        .classList.add("hidden");
+
+
+    document
+        .getElementById("endScreen")
+        .classList.add("hidden");
+
+
+    document
+        .getElementById("gameScreen")
+        .classList.remove("hidden");
+
+
+    resetLog();
+
+    updateStats();
+
+    startTimer();
+
+    nextProblem();
+
+}
+
+
+/*
+=========================================================
+TIMER
+=========================================================
+*/
+
+function startTimer() {
+
+    stopTimer();
+
+
+    timerInterval = setInterval(function() {
+
+        if (!gameRunning) {
+            return;
+        }
+
+
+        time--;
+
+        updateStats();
+
+
+        const timer =
+            document.getElementById("timer");
+
+
+        timer.classList.remove(
+            "warning",
+            "danger"
+        );
+
+
+        if (time <= 10) {
+
+            timer.classList.add("danger");
+
+        }
+
+        else if (time <= 25) {
+
+            timer.classList.add("warning");
+
+        }
+
+
+        if (time <= 0) {
+
+            endGame(false);
+
+        }
+
+    }, 1000);
+
+}
+
+
+/*
+=========================================================
+STOP TIMER
+=========================================================
+*/
+
+function stopTimer() {
+
+    if (timerInterval) {
+
+        clearInterval(timerInterval);
+
+        timerInterval = null;
+
+    }
+
+}
+
+
+/*
+=========================================================
+UPDATE STATS
+=========================================================
+*/
+
+function updateStats() {
+
+    document.getElementById("timer")
+        .textContent = time;
+
+
+    document.getElementById("score")
+        .textContent = score;
+
+
+    document.getElementById("repairs")
+        .textContent = repairs;
+
+}
+
+
+/*
+=========================================================
+NEXT PROBLEM
+=========================================================
+*/
+
+function nextProblem() {
+
+    if (!gameRunning) {
+        return;
+    }
+
+
+    const index =
+        Math.floor(
+            Math.random() * problems.length
+        );
+
+
+    currentProblem =
+        problems[index];
+
+
+    document.getElementById(
+        "problem"
+    ).textContent =
+        currentProblem.text;
+
+
+    const monitor =
+        document.getElementById("monitor");
+
+
+    monitor.className =
+        "monitor broken";
+
+
+    monitor.innerHTML =
+        "SYSTEM ERROR<br>" +
+        "DIAGNOSTIC REQUIRED";
+
+
+    enableButtons();
+
+}
+
+
+/*
+=========================================================
+CHECK COMPONENT
+=========================================================
+*/
+
+function checkComponent(component) {
+
+    if (!gameRunning || !currentProblem) {
+        return;
+    }
+
+
+    if (
+        component ===
+        currentProblem.answer
+    ) {
+
+        /*
+        CORRECT
+        */
+
+        score += 100;
+
+        repairs++;
+
+        time += 3;
+
+
+        addLog(
+            "✓ " +
+            currentProblem.success,
+            "correct"
+        );
+
+
+        const monitor =
+            document.getElementById("monitor");
+
+
+        monitor.className =
+            "monitor fixed";
+
+
+        monitor.innerHTML =
+            "SYSTEM FIXED ✓<br>" +
+            "BREAD TECHNICIAN APPROVED";
+
+
+        disableButtons();
+
+        updateStats();
+
+
+        setTimeout(function() {
+
+            nextProblem();
+
+        }, 900);
+
+    }
+
+    else {
+
+        /*
+        WRONG
+        */
+
+        score -= 25;
+
+        time -= 5;
+
+
+        if (score < 0) {
+            score = 0;
+        }
+
+
+        addLog(
+            "✗ Wrong component! -5 seconds.",
+            "wrong"
+        );
+
+
+        updateStats();
+
+
+        if (time <= 0) {
+
+            endGame(false);
+
+        }
+
+    }
+
+}
+
+
+/*
+=========================================================
+ENABLE BUTTONS
+=========================================================
+*/
+
+function enableButtons() {
+
+    document
+        .querySelectorAll(".component")
+        .forEach(function(button) {
+
+            button.disabled = false;
+
+        });
+
+}
+
+
+/*
+=========================================================
+DISABLE BUTTONS
+=========================================================
+*/
+
+function disableButtons() {
+
+    document
+        .querySelectorAll(".component")
+        .forEach(function(button) {
+
+            button.disabled = true;
+
+        });
+
+}
+
+
+/*
+=========================================================
+LOG
+=========================================================
+*/
+
+function addLog(message, type) {
+
+    const log =
+        document.getElementById("log");
+
+
+    const entry =
+        document.createElement("div");
+
+
+    entry.className = type;
+
+    entry.textContent =
+        "[TECH] " + message;
+
+
+    log.appendChild(entry);
+
+
+    log.scrollTop =
+        log.scrollHeight;
+
+}
+
+
+/*
+=========================================================
+RESET LOG
+=========================================================
+*/
+
+function resetLog() {
+
+    document.getElementById(
+        "log"
+    ).innerHTML = `
+        <div class="neutral">
+            [SYSTEM] Technician console ready.
+        </div>
+    `;
+
+}
+
+
+/*
+=========================================================
+END GAME
+=========================================================
+*/
+
+function endGame(won) {
+
+    gameRunning = false;
+
+    stopTimer();
+
+
+    document
+        .getElementById("gameScreen")
+        .classList.add("hidden");
+
+
+    document
+        .getElementById("endScreen")
+        .classList.remove("hidden");
+
+
+    document.getElementById(
+        "finalScore"
+    ).textContent = score;
+
+
+    const title =
+        document.getElementById("endTitle");
+
+
+    const message =
+        document.getElementById("endMessage");
+
+
+    if (won) {
+
+        title.textContent =
+            "🍞 PC Successfully Repaired!";
+
+        message.textContent =
+            "Excellent work. BREAD Computer Repair approves. your hired lol";
+
+    }
+
+    else {
+
+        title.textContent =
+            "💀 Time's Up!";
+
+        message.textContent =
+            "The customer is still staring at the broken PC. 😭";
+
+    }
+
+}
+
+
+/*
+=========================================================
+ESC KEY
+=========================================================
+*/
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Escape") {
+
+            if (gameRunning) {
+
+                endGame(false);
+
+            }
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
