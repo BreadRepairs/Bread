@@ -346,35 +346,22 @@ form.addEventListener("submit", function(e){
     )
 
     .then(function(){
-
         showStatus("✅ Gift card purchase request sent successfully!", true);
-
         form.reset();
-
         giftValue.value = "€5";
-
         money.textContent = "€5";
-
         buttons.forEach(b => b.classList.remove("active"));
-
         buttons[0].classList.add("active");
-
     })
 
     .catch(function(error){
-
         console.error(error);
-
         showStatus("❌ Failed to send gift card purchase request.", false);
-
     })
 
     .finally(function(){
-
         submitBtn.disabled = false;
-
         submitBtn.textContent = "🍞 Purchase BREAD Gift Card →";
-
     });
 
 });

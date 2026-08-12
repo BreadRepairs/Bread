@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BREAD Computer Repair | Download</title>
+    <style>
+      :root {
+        --bg: #060b14;
+        --panel: rgba(10, 18, 32, 0.95);
+        --panel-strong: #091522;
+        --text: #f4f7ff;
+        --muted: #94a7c6;
+        --accent: #2ea8ff;
+        --accent-strong: #4ce3ff;
+        --border: rgba(78, 168, 255, 0.24);
+        --shadow: 0 24px 55px rgba(0, 0, 0, 0.32);
+        --success: #39d98a;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: var(--text);
+        background: radial-gradient(circle at top left, rgba(46, 168, 255, 0.18), transparent 30%),
+          radial-gradient(circle at bottom right, rgba(76, 227, 255, 0.14), transparent 28%),
+          var(--bg);
+        min-height: 100vh;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(255,255,255,0.03), transparent 45%);
+        pointer-events: none;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 24px 10%;
+      }
+
+      .logo {
+        font-size: 1.6rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        color: var(--accent-strong);
+      }
+
+      nav a {
+        color: var(--text);
+        text-decoration: none;
+        margin-left: 24px;
+        transition: color 0.25s ease;
+      }
+
+      nav a:hover {
+        color: var(--accent);
+      }
+
+      .page-shell {
+        width: min(1180px, calc(100% - 2rem));
+        margin: 0 auto;
+        padding: 2rem 0 4rem;
+      }
+
+      .hero {
+        background: linear-gradient(145deg, rgba(16, 26, 45, 0.96), rgba(8, 15, 27, 0.96));
+        border: 1px solid var(--border);
+        border-radius: 28px;
+        box-shadow: var(--shadow);
+        padding: 2rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: auto auto -60px -60px;
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(46, 168, 255, 0.22), transparent 70%);
+        filter: blur(20px);
+      }
+
+      .hero-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-bottom: 1.25rem;
+      }
+
+      .hero-title {
+        display: flex;
+        flex-direction: column;
+        gap: 0.65rem;
+      }
+
+      .hero-title h1 {
+        font-size: clamp(2.2rem, 4vw, 3.4rem);
+        margin: 0;
+      }
+
+      .hero-title p {
+        margin: 0;
+        color: var(--muted);
+        max-width: 720px;
+        line-height: 1.7;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+      }
+
+      .button-secondary,
+      .button-primary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.85rem 1.4rem;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .button-secondary {
+        color: var(--text);
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.12);
+      }
+
+      .button-primary {
+        color: #09101b;
+        background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+      }
+
+      .button-secondary:hover,
+      .button-primary:hover {
+        transform: translateY(-2px);
+      }
+
+      .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.25rem;
+        margin-top: 2rem;
+      }
+
+      .card {
+        background: linear-gradient(145deg, rgba(16, 26, 45, 0.94), rgba(9, 16, 29, 0.94));
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        padding: 1.4rem;
+        min-height: 320px;
+      }
+
+      .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+
+      .card-header h2 {
+        margin: 0;
+        font-size: 1.15rem;
+      }
+
+      .badge {
+        padding: 0.4rem 0.8rem;
+        border-radius: 999px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+        color: #04101e;
+      }
+
+      .card p {
+        color: var(--muted);
+        line-height: 1.7;
+        margin: 1rem 0;
+        flex: 1;
+      }
+
+      .download-info {
+        display: grid;
+        gap: 0.7rem;
+        margin-top: 0.75rem;
+      }
+
+      .download-info span {
+        display: inline-flex;
+        justify-content: space-between;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .download-info span strong {
+        color: var(--text);
+        font-weight: 600;
+      }
+
+      .download-button {
+        margin-top: 1.2rem;
+        border: none;
+        border-radius: 999px;
+        padding: 0.95rem 1.35rem;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        cursor: not-allowed;
+        background: rgba(46, 168, 255, 0.16);
+        color: var(--muted);
+      }
+
+      .download-button.available {
+        cursor: pointer;
+        background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+        color: #09101b;
+      }
+
+      .note-panel {
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(78, 168, 255, 0.18);
+        border-radius: 20px;
+        padding: 1.4rem;
+        margin-top: 2rem;
+      }
+
+      .note-panel h3 {
+        margin: 0 0 0.85rem;
+        font-size: 1rem;
+      }
+
+      .note-panel p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      @media (max-width: 900px) {
+        .cards-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 680px) {
+        nav {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1rem;
+        }
+
+        .hero-top {
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">BREAD</div>
+      <div>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="news.html">News</a>
+        <a href="request-repair.html">Request a Repair</a>
+        <a href="buy-gift-card.html">Buy a Gift Card</a>
+      </div>
+    </nav>
+
+    <main class="page-shell">
+      <section class="hero">
+        <div class="hero-top">
+          <div class="hero-title">
+            <div class="brand">BREAD Computer Repair</div>
+            <h1>Download Center</h1>
+            <p>Discover future BREAD tools and the upcoming BREAD Connect Beta download experience. All software packages are currently in planning and clearly marked as Coming Soon.</p>
+          </div>
+          <div class="hero-actions">
+            <a class="button-secondary" href="index.html">← Back to Home</a>
+            <a class="button-primary" href="services.html">Explore Services</a>
+          </div>
+        </div>
+        <div class="note-panel">
+          <h3>Download page status</h3>
+          <p>BREAD Connect Beta is not yet available as a packaged download. This page is intended to present the future product roadmap and the tools customers can expect in future releases.</p>
+        </div>
+      </section>
+
+      <section class="cards-grid">
+        <article class="card">
+          <div class="card-header">
+            <h2>BREAD Connect Beta</h2>
+            <span class="badge">Coming Soon</span>
+          </div>
+          <p>Future remote support software with a consent-first workflow for authorized technician assistance. Designed to connect customers and support technicians securely.</p>
+          <div class="download-info">
+            <span><strong>Version</strong><strong>0.1.0 BETA</strong></span>
+            <span><strong>Platform</strong><strong>Windows</strong></span>
+            <span><strong>File type</strong><strong>MSI / EXE</strong></span>
+            <span><strong>Status</strong><strong>Coming Soon</strong></span>
+          </div>
+          <button class="download-button" disabled>Download Coming Soon</button>
+        </article>
+
+        <article class="card">
+          <div class="card-header">
+            <h2>BREAD Repair Tools</h2>
+            <span class="badge">Coming Soon</span>
+          </div>
+          <p>Future toolkit for device diagnosis, system checks, and support request preparation. These utilities will be built to complement the BREAD service experience.</p>
+          <div class="download-info">
+            <span><strong>Version</strong><strong>Planned</strong></span>
+            <span><strong>Platform</strong><strong>Windows</strong></span>
+            <span><strong>File type</strong><strong>ZIP</strong></span>
+            <span><strong>Status</strong><strong>Coming Soon</strong></span>
+          </div>
+          <button class="download-button" disabled>Download Coming Soon</button>
+        </article>
+
+        <article class="card">
+          <div class="card-header">
+            <h2>BREAD Diagnostics Utility</h2>
+            <span class="badge">Coming Soon</span>
+          </div>
+          <p>A future diagnostic suite for hardware, storage, and network health checks. It will help customers share only the relevant system details needed for support.</p>
+          <div class="download-info">
+            <span><strong>Version</strong><strong>Planned</strong></span>
+            <span><strong>Platform</strong><strong>Windows</strong></span>
+            <span><strong>File type</strong><strong>EXE</strong></span>
+            <span><strong>Status</strong><strong>Coming Soon</strong></span>
+          </div>
+          <button class="download-button" disabled>Download Coming Soon</button>
+        </article>
+
+        <article class="card">
+          <div class="card-header">
+            <h2>Future BREAD Utilities</h2>
+            <span class="badge">Coming Soon</span>
+          </div>
+          <p>Additional tools for repairs, backups, and system health reporting. Future releases will include safer local utilities with clear customer controls.</p>
+          <div class="download-info">
+            <span><strong>Version</strong><strong>Planned</strong></span>
+            <span><strong>Platform</strong><strong>Windows</strong></span>
+            <span><strong>File type</strong><strong>Various</strong></span>
+            <span><strong>Status</strong><strong>Coming Soon</strong></span>
+          </div>
+          <button class="download-button" disabled>Download Coming Soon</button>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
