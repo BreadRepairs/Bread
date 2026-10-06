@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <defs>
+    <linearGradient id="bg3" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#09111d"/>
+      <stop offset="100%" stop-color="#112b57"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg3)"/>
+  <circle cx="220" cy="180" r="150" fill="#2ea8ff" opacity="0.18"/>
+  <circle cx="1070" cy="510" r="160" fill="#4ce3ff" opacity="0.14"/>
+  <g transform="translate(170 150)">
+    <rect x="60" y="70" width="520" height="320" rx="28" fill="#0d1f37" stroke="#4ea8ff" stroke-width="5"/>
+    <rect x="100" y="120" width="180" height="15" rx="7.5" fill="#4ce3ff" opacity="0.8"/>
+    <rect x="100" y="155" width="240" height="15" rx="7.5" fill="#d1efff" opacity="0.8"/>
+    <rect x="100" y="208" width="390" height="110" rx="18" fill="#122844" stroke="#4ea8ff" stroke-width="3"/>
+    <circle cx="470" cy="250" r="46" fill="#2ea8ff" opacity="0.42"/>
+    <path d="M418 242l26 26 52-60" fill="none" stroke="#d9f4ff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="100" y="340" width="140" height="18" rx="9" fill="#d9f4ff" opacity="0.8"/>
+  </g>
+  <text x="640" y="634" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="52" font-weight="700" fill="#eff8ff">Behind the Scenes at BREAD</text>
+</svg>

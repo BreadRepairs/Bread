@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <defs>
+    <linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#06131d"/>
+      <stop offset="50%" stop-color="#112b4a"/>
+      <stop offset="100%" stop-color="#0d1d2d"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#2ea8ff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#4ce3ff" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <circle cx="1120" cy="140" r="160" fill="#2ea8ff" opacity="0.15"/>
+  <circle cx="200" cy="560" r="180" fill="#4ce3ff" opacity="0.12"/>
+  <g transform="translate(190 130)">
+    <rect x="90" y="40" width="640" height="365" rx="24" fill="#0c1729" stroke="#3aa8ff" stroke-width="6"/>
+    <rect x="120" y="70" width="580" height="300" rx="18" fill="url(#screen)" opacity="0.25"/>
+    <path d="M200 220c60-80 115-120 170-120 61 0 95 38 140 96 43 57 86 80 155 84" fill="none" stroke="#d8f5ff" stroke-width="12" stroke-linecap="round"/>
+    <circle cx="360" cy="210" r="52" fill="#0d1b2a" stroke="#d8f5ff" stroke-width="8"/>
+    <circle cx="360" cy="210" r="16" fill="#4ce3ff"/>
+    <g fill="#d8f5ff" opacity="0.9">
+      <circle cx="260" cy="270" r="8"/>
+      <circle cx="300" cy="260" r="8"/>
+      <circle cx="340" cy="250" r="8"/>
+      <circle cx="380" cy="260" r="8"/>
+      <circle cx="420" cy="270" r="8"/>
+    </g>
+    <rect x="340" y="430" width="180" height="32" rx="16" fill="#d9f3ff" opacity="0.7"/>
+    <rect x="210" y="472" width="420" height="22" rx="10" fill="#285a8d" opacity="0.7"/>
+  </g>
+  <text x="640" y="630" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="54" font-weight="700" fill="#eaf7ff">How to Clean Your PC</text>
+</svg>

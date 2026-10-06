@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <defs>
+    <linearGradient id="bg2" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#091521"/>
+      <stop offset="60%" stop-color="#102845"/>
+      <stop offset="100%" stop-color="#0a1727"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg2)"/>
+  <circle cx="1010" cy="140" r="180" fill="#2ea8ff" opacity="0.12"/>
+  <circle cx="240" cy="520" r="200" fill="#4ce3ff" opacity="0.14"/>
+  <g transform="translate(180 120)">
+    <rect x="0" y="120" width="540" height="330" rx="24" fill="#0d1b2d" stroke="#4ec3ff" stroke-width="6"/>
+    <rect x="44" y="160" width="452" height="210" rx="20" fill="#0a1321" stroke="#8ed7ff" stroke-width="3"/>
+    <g fill="#4ce3ff">
+      <rect x="70" y="188" width="120" height="22" rx="11"/>
+      <rect x="70" y="218" width="90" height="16" rx="8"/>
+      <rect x="70" y="246" width="175" height="16" rx="8"/>
+      <rect x="70" y="274" width="140" height="16" rx="8"/>
+      <rect x="70" y="302" width="110" height="16" rx="8"/>
+    </g>
+    <g fill="#d7f0ff" opacity="0.7">
+      <circle cx="430" cy="260" r="58" fill="none" stroke="#d7f0ff" stroke-width="8"/>
+      <path d="M430 260l32-25" stroke="#d7f0ff" stroke-width="8" stroke-linecap="round"/>
+      <circle cx="430" cy="260" r="11" fill="#4ce3ff"/>
+    </g>
+  </g>
+  <text x="640" y="630" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="54" font-weight="700" fill="#eff8ff">Diagnosing a Slow PC</text>
+</svg>

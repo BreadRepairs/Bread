@@ -1,0 +1,42 @@
+[
+  {
+    "id": "clean-pc",
+    "title": "How to Clean Your PC",
+    "description": "A quick BREAD guide to safely cleaning dust from your computer.",
+    "thumbnail": "images/videos/clean-pc.svg",
+    "video": "videos/clean-pc.mp4",
+    "category": "PC Maintenance",
+    "date": "2026-10-06",
+    "recommendedIf": "You want to learn how to safely clean dust from your PC."
+  },
+  {
+    "id": "slow-pc",
+    "title": "Diagnosing a Slow PC",
+    "description": "A practical walkthrough for spotting the most common causes of poor performance.",
+    "thumbnail": "images/videos/slow-pc.svg",
+    "video": "videos/diagnose-slow-pc.mp4",
+    "category": "Tutorials",
+    "date": "2026-10-05",
+    "recommendedIf": "Your PC is running slowly."
+  },
+  {
+    "id": "bread-news",
+    "title": "Behind the Scenes at BREAD",
+    "description": "A quick look at how we prepare repairs, support customers, and keep systems running smoothly.",
+    "thumbnail": "images/videos/bread-news.svg",
+    "video": "videos/bread-news.mp4",
+    "category": "BREAD News",
+    "date": "2026-10-02",
+    "recommendedIf": "You're interested in BREAD Computer Repair."
+  },
+  {
+    "id": "safe-upgrade",
+    "title": "Safe PC Upgrade Tips",
+    "description": "Helpful reminders for upgrading parts without risking damage or unnecessary stress.",
+    "thumbnail": "images/videos/upgrade-tips.svg",
+    "video": "videos/safe-upgrade.mp4",
+    "category": "Tips & Tricks",
+    "date": "2026-09-28",
+    "recommendedIf": "You want to learn more about PC maintenance."
+  }
+]
