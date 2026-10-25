@@ -285,7 +285,7 @@
     "name": "Fujitsu USB-C Cable",
     "price": "€3",
     "description": "Recommend buying this with the type-c replicator.",
-    "stock": true,
+    "stock": false,
     "badge": "NEW"
   },
   {
