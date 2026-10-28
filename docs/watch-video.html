@@ -130,6 +130,38 @@
           .replace(/'/g, "&#039;");
       }
 
+      function getRasterThumbnailUrl(path) {
+        if (typeof path !== "string" || !path.trim()) return null;
+
+        try {
+          const url = new URL(path, window.location.href);
+          const isSiteLocal = url.origin === window.location.origin;
+          const isVideosImagePath = /(?:^|\/)images\/videos\/[^/]+\.(?:jpe?g|png|webp)$/i.test(url.pathname);
+          return isSiteLocal && isVideosImagePath ? url : null;
+        } catch {
+          return null;
+        }
+      }
+
+      function expectedImageMimeType(url) {
+        const extension = url.pathname.split(".").pop().toLowerCase();
+        if (extension === "jpg" || extension === "jpeg") return "image/jpeg";
+        if (extension === "png") return "image/png";
+        if (extension === "webp") return "image/webp";
+        return null;
+      }
+
+      async function fileExists(path, expectedMimeType) {
+        if (!path) return false;
+        try {
+          const response = await fetch(path, { method: "HEAD" });
+          const actualMimeType = (response.headers.get("content-type") || "").split(";")[0].trim().toLowerCase();
+          return response.ok && (!expectedMimeType || actualMimeType === expectedMimeType);
+        } catch {
+          return false;
+        }
+      }
+
       async function loadVideo() {
         const details = document.getElementById("videoDetails");
         const videoId = new URLSearchParams(window.location.search).get("id");
@@ -138,18 +170,23 @@
           const response = await fetch("videos.json", { cache: "no-store" });
           if (!response.ok) throw new Error("Video data unavailable");
           const data = await response.json();
-          const videos = Array.isArray(data)
-            ? data.filter((video) => video && video.id && video.video && video.title)
-            : [];
-          const video = videos.find((item) => String(item.id || "") === videoId);
+          const entries = Array.isArray(data) ? data : [];
+          const videos = (await Promise.all(entries.map(async (item) => {
+            if (!item || !item.id || !item.title || !item.video) return null;
+            const thumbnailUrl = getRasterThumbnailUrl(item.thumbnail);
+            const thumbnailMimeType = thumbnailUrl && expectedImageMimeType(thumbnailUrl);
+            if (!thumbnailUrl || !thumbnailMimeType) return null;
+            const [videoExists, thumbnailExists] = await Promise.all([
+              fileExists(item.video),
+              fileExists(thumbnailUrl.href, thumbnailMimeType)
+            ]);
+            return videoExists && thumbnailExists
+              ? { ...item, thumbnailUrl: thumbnailUrl.href }
+              : null;
+          }))).filter(Boolean);
+          const video = videos.find((item) => String(item.id) === videoId);
 
           if (!video) {
-            details.textContent = "Videos are coming soon. Check back later!";
-            return;
-          }
-
-          const responseVideo = await fetch(video.video, { method: "HEAD" });
-          if (!responseVideo.ok) {
             details.textContent = "Videos are coming soon. Check back later!";
             return;
           }
@@ -164,7 +201,7 @@
             : "";
 
           details.innerHTML = `
-            <video controls preload="metadata" src="${escapeHtml(video.video)}"></video>
+            <video controls preload="metadata" src="${escapeHtml(video.video)}" poster="${escapeHtml(video.thumbnailUrl)}"></video>
             <h1>${escapeHtml(video.title)}</h1>
             <p>${escapeHtml(video.description)}</p>
             <p>${escapeHtml(video.category)} · ${escapeHtml(video.date)}</p>
