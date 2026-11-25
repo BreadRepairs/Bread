@@ -1,0 +1,232 @@
+/* Shared BREAD visual theme: color and surface details only. */
+:root {
+  --bg: #0b1117;
+  --panel: rgba(19, 29, 35, 0.94);
+  --panel-strong: #1a292f;
+  --text: #f5f2e9;
+  --muted: #b7c0bd;
+  --accent: #e4a34b;
+  --accent-strong: #ffd18a;
+  --border: rgba(228, 163, 75, 0.28);
+  --shadow: 0 20px 45px rgba(0, 0, 0, 0.32);
+  --blue: #e4a34b;
+  --cyan: #ffd18a;
+}
+
+body {
+  color: var(--text);
+  background:
+    radial-gradient(circle at 8% 0%, rgba(228, 163, 75, 0.12), transparent 34rem),
+    radial-gradient(circle at 94% 24%, rgba(104, 151, 137, 0.09), transparent 32rem),
+    #0b1117;
+}
+
+body::before {
+  background: linear-gradient(135deg, rgba(255, 242, 218, 0.025), transparent 48%);
+}
+
+nav {
+  border-bottom: 1px solid rgba(228, 163, 75, 0.16);
+}
+
+nav a,
+.nav-links a {
+  transition: color 0.2s ease;
+}
+
+nav a:hover,
+.nav-links a:hover {
+  color: var(--accent-strong);
+}
+
+.hero,
+.card,
+.form-card,
+.contact-box,
+.panel,
+.featured-card,
+.news-card,
+.gift-card-box,
+.empty-state,
+.note-panel,
+.terminal,
+.game,
+.stat,
+.overview,
+.uptime,
+.achievement {
+  border-color: var(--border);
+  box-shadow: var(--shadow);
+}
+
+.hero,
+.card,
+.form-card,
+.contact-box,
+.panel,
+.featured-card,
+.news-card,
+.gift-card-box,
+.empty-state,
+.note-panel,
+.terminal,
+.game,
+.stat,
+.overview,
+.uptime,
+.achievement {
+  background-color: #142027;
+}
+
+.hero h1,
+.hero span,
+.title,
+.logo,
+.brand,
+.section-title,
+.card h2,
+.gift-card-box h3,
+.price,
+.card-date,
+.recommended-label,
+.article-link,
+.hero-title h1,
+.crumb,
+.eyebrow,
+.stat b {
+  color: var(--accent-strong);
+}
+
+.button,
+.services-cta,
+.license-button,
+.submit-btn,
+.submit,
+.read-more-btn,
+.big-button,
+.terminal button,
+body:has(.container pre) .container > a {
+  border-color: rgba(255, 209, 138, 0.4);
+  background: linear-gradient(135deg, #d98d35, #f3bd6c);
+  color: #20170d;
+  box-shadow: 0 10px 24px rgba(228, 163, 75, 0.16);
+}
+
+.button:hover,
+.services-cta:hover,
+.license-button:hover,
+.submit-btn:hover,
+.submit:hover,
+.read-more-btn:hover,
+.big-button:hover,
+.terminal button:hover,
+body:has(.container pre) .container > a:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 12px 28px rgba(228, 163, 75, 0.28);
+}
+
+.back-btn,
+.hero-nav a,
+.button-secondary,
+.category-button,
+.close-btn,
+.component,
+.valueBtn {
+  border-color: rgba(228, 163, 75, 0.25);
+  background-color: rgba(255, 242, 218, 0.045);
+  color: var(--text);
+}
+
+.back-btn:hover,
+.hero-nav a:hover,
+.category-button[aria-pressed="true"],
+.valueBtn:hover,
+.valueBtn.active,
+.component:hover,
+.close-btn:hover {
+  border-color: var(--accent);
+  background-color: rgba(228, 163, 75, 0.16);
+  color: var(--accent-strong);
+}
+
+input,
+select,
+textarea,
+.video-search,
+.ts-control,
+.ts-dropdown {
+  border-color: rgba(228, 163, 75, 0.28);
+  background-color: #111b20;
+  color: var(--text);
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+.video-search:focus,
+.ts-wrapper.focus .ts-control {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(228, 163, 75, 0.17);
+}
+
+.ts-dropdown .option:hover,
+.ts-dropdown .active {
+  background: #d98d35 !important;
+  color: #20170d !important;
+}
+
+.download-button.available {
+  background: linear-gradient(135deg, #d98d35, #f3bd6c);
+  color: #20170d;
+}
+
+.download-button:not(.available) {
+  background: rgba(228, 163, 75, 0.12);
+  color: #c4b8a5;
+}
+
+.preview {
+  border: 1px solid rgba(255, 209, 138, 0.45);
+  background: linear-gradient(135deg, #d98d35, #f3bd6c);
+  color: #20170d;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.25);
+}
+
+.preview h2,
+.preview .money {
+  color: #20170d;
+}
+
+.field a {
+  color: var(--accent-strong) !important;
+}
+
+body:has(.container pre) .container {
+  border: 1px solid var(--border);
+  background: linear-gradient(145deg, rgba(24, 36, 43, 0.96), rgba(15, 24, 30, 0.97));
+  box-shadow: var(--shadow);
+}
+
+.terminal {
+  border-color: rgba(228, 163, 75, 0.42);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--accent-strong);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
