@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "featured": true,
+    "featured": false,
     "name": "Welcome to the new BREAD Repairs website!",
     "date": "July 1 2026",
     "description": "We have refreshed our online presence with a cleaner layout, easier browsing, and a new place to follow our latest updates.",
@@ -57,11 +57,19 @@
     "link": "breadrepairs.github.io/Bread/buy-gift-card.html"
   },
   {
-    "id": 7,
-    "name": "No orders nor updates in over 2 weeks",
-    "date": "August 18 2026",
-    "description": "We have no more info about this. Please contact Bread for Details",
-    "fullText": "NO INFO SET",
-    "link": "https://breadrepairs.github.io/Bread/#contact"
+    "id": 8,
+    "name": "Gold Limited time Theme for the birthday of the CEO!",
+    "date": "November 18 2026",
+    "description": "gold theeme. yea cool",
+    "fullText": "N/A",
+    "link": "https://breadrepairs.github.io/Bread"
+  },
+  {
+    "id": 9,
+    "name": "Bread Connect Delayed",
+    "date": "November 12 2026",
+    "description": "Bread Connect has gotten delayed for 2027 or early 2028. Thank you for your patience!",
+    "fullText": "N/A",
+    "link": ""
   }
 ]
