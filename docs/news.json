@@ -1,7 +1,6 @@
 [
   {
     "id": 1,
-    "featured": false,
     "name": "Welcome to the new BREAD Repairs website!",
     "date": "July 1 2026",
     "description": "We have refreshed our online presence with a cleaner layout, easier browsing, and a new place to follow our latest updates.",
@@ -66,6 +65,7 @@
   },
   {
     "id": 9,
+    "featured": true,
     "name": "Bread Connect Delayed",
     "date": "November 12 2026",
     "description": "Bread Connect has gotten delayed for 2027 or early 2028. Thank you for your patience!",
